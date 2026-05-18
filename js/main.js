@@ -1,100 +1,105 @@
-/* ============================================
+/* ======================================================
    AMOR QUE PROTEGE — main.js
-   Interatividade e animações
-   ============================================ */
+   FAQ Accordion | Scroll Animations | Floating CTA
+   ====================================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
 
-  /* ── 1. FAQ ACCORDION ── */
+  /* ============================
+     1. FAQ ACCORDION
+  ============================ */
   const faqItems = document.querySelectorAll('.faq-item');
 
-  faqItems.forEach(item => {
+  faqItems.forEach(function (item) {
     const btn = item.querySelector('.faq-question');
     if (!btn) return;
 
-    btn.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
+    btn.addEventListener('click', function () {
+      const isActive = item.classList.contains('active');
 
       // Fecha todos
-      faqItems.forEach(i => {
-        i.classList.remove('open');
-        const q = i.querySelector('.faq-question');
+      faqItems.forEach(function (el) {
+        el.classList.remove('active');
+        const q = el.querySelector('.faq-question');
         if (q) q.setAttribute('aria-expanded', 'false');
       });
 
-      // Abre o clicado (toggle)
-      if (!isOpen) {
-        item.classList.add('open');
+      // Abre o clicado (se não estava ativo)
+      if (!isActive) {
+        item.classList.add('active');
         btn.setAttribute('aria-expanded', 'true');
       }
     });
   });
 
 
-  /* ── 2. FLOATING CTA ── */
-  const floatingCta = document.getElementById('floating-cta');
-  const hero = document.getElementById('inicio');
+  /* ============================
+     2. SCROLL ANIMATIONS (AOS)
+  ============================ */
+  const aosEls = document.querySelectorAll('[data-aos]');
 
-  if (floatingCta && hero) {
-    const showAfter = hero.offsetTop + hero.offsetHeight;
+  function checkAOS() {
+    const winH = window.innerHeight;
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > showAfter) {
-        floatingCta.classList.add('visible');
-      } else {
-        floatingCta.classList.remove('visible');
-      }
-    }, { passive: true });
-  }
+    aosEls.forEach(function (el) {
+      const rect = el.getBoundingClientRect();
+      const delay = parseInt(el.getAttribute('data-aos-delay') || 0, 10);
 
-
-  /* ── 3. FADE-IN on scroll (Intersection Observer) ── */
-  const animatables = document.querySelectorAll(
-    '.pain-card, .chapter-card, .bonus-card, .testimonial-card, ' +
-    '.transform-col, .faq-item, .solution-image, .solution-content, ' +
-    '.guarantee-badge, .hero-text, .hero-visual, .offer-box, ' +
-    '.bonus-total-box, .section-title, .section-subtitle'
-  );
-
-  animatables.forEach(el => el.classList.add('fade-in'));
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+      if (rect.top < winH - 80 && !el.classList.contains('aos-animate')) {
+        setTimeout(function () {
+          el.classList.add('aos-animate');
+        }, delay);
       }
     });
-  }, { threshold: 0.12 });
+  }
 
-  animatables.forEach(el => observer.observe(el));
+  // Roda na carga e no scroll
+  checkAOS();
+  window.addEventListener('scroll', checkAOS, { passive: true });
 
 
-  /* ── 4. SMOOTH SCROLL para links de âncora ── */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      const targetId = anchor.getAttribute('href');
-      if (targetId === '#') return;
+  /* ============================
+     3. FLOATING CTA
+  ============================ */
+  var floatingCta = document.getElementById('floatingCta');
 
-      const target = document.querySelector(targetId);
+  function toggleFloating() {
+    if (!floatingCta) return;
+    if (window.scrollY > 600) {
+      floatingCta.classList.add('visible');
+    } else {
+      floatingCta.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', toggleFloating, { passive: true });
+
+
+  /* ============================
+     4. SMOOTH SCROLL INTERNO
+  ============================ */
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      var target = document.querySelector(this.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        const offset = 80; // altura do header sticky
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   });
 
 
-  /* ── 5. HEADER SHADOW on scroll ── */
-  const header = document.querySelector('.site-header');
+  /* ============================
+     5. HEADER SCROLL SHADOW
+  ============================ */
+  var header = document.querySelector('.site-header');
+
   if (header) {
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', function () {
       if (window.scrollY > 10) {
-        header.style.boxShadow = '0 4px 24px rgba(233,30,140,.15)';
+        header.style.boxShadow = '0 4px 20px rgba(233,30,140,.15)';
       } else {
-        header.style.boxShadow = '0 2px 16px rgba(233,30,140,.08)';
+        header.style.boxShadow = '0 2px 12px rgba(233,30,140,.08)';
       }
     }, { passive: true });
   }
