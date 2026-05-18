@@ -1,153 +1,179 @@
-/* ============================================================
-   AMOR QUE PROTEGE — Main JavaScript
-   FAQ Accordion | Smooth Scroll | Floating CTA | Animations
-   ============================================================ */
+/**
+ * Amor que Protege — JavaScript Principal
+ * FAQ Accordion | Floating CTA | Countdown Timer | Smooth Scroll
+ */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
 
-  /* ── FAQ Accordion ─────────────────────────────────────── */
+  /* =============================================
+     1. FAQ ACCORDION
+  ============================================= */
   const faqItems = document.querySelectorAll('.faq-item');
 
-  faqItems.forEach(item => {
-    const btn    = item.querySelector('.faq-question');
+  faqItems.forEach(function (item) {
+    const btn = item.querySelector('.faq-question');
     const answer = item.querySelector('.faq-answer');
+    const icon = item.querySelector('.faq-icon');
 
     if (!btn || !answer) return;
 
-    btn.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
+    btn.addEventListener('click', function () {
+      const isOpen = item.classList.contains('active');
 
-      // Fecha todos
-      faqItems.forEach(i => {
-        i.classList.remove('open');
-        const a = i.querySelector('.faq-answer');
-        const b = i.querySelector('.faq-question');
-        if (a) a.classList.remove('open');
-        if (b) b.setAttribute('aria-expanded', 'false');
+      // Fechar todos os outros
+      faqItems.forEach(function (other) {
+        if (other !== item) {
+          other.classList.remove('active');
+          const otherAnswer = other.querySelector('.faq-answer');
+          if (otherAnswer) otherAnswer.style.maxHeight = null;
+          const otherBtn = other.querySelector('.faq-question');
+          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+        }
       });
 
-      // Abre o clicado (se estava fechado)
-      if (!isOpen) {
-        item.classList.add('open');
-        answer.classList.add('open');
+      // Abrir/fechar este
+      if (isOpen) {
+        item.classList.remove('active');
+        answer.style.maxHeight = null;
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        item.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
         btn.setAttribute('aria-expanded', 'true');
       }
     });
   });
 
-  /* ── Floating CTA ──────────────────────────────────────── */
-  const floatingCta  = document.getElementById('floating-cta');
-  const heroSection  = document.getElementById('hero-section');
+  /* =============================================
+     2. FLOATING CTA (aparece após 400px de scroll)
+  ============================================= */
+  var floatingCta = document.getElementById('floating-cta');
 
-  function updateFloatingCta() {
-    if (!floatingCta || !heroSection) return;
-    const heroBottom = heroSection.getBoundingClientRect().bottom;
-    if (heroBottom < 0) {
-      floatingCta.classList.add('visible');
-    } else {
-      floatingCta.classList.remove('visible');
-    }
+  if (floatingCta) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 400) {
+        floatingCta.classList.add('visible');
+      } else {
+        floatingCta.classList.remove('visible');
+      }
+    });
   }
 
-  window.addEventListener('scroll', updateFloatingCta, { passive: true });
-  updateFloatingCta();
+  /* =============================================
+     3. CONTADOR REGRESSIVO (4 horas)
+  ============================================= */
+  var timerDisplay = document.getElementById('timer-display');
 
-  /* ── Intersection Observer – fade-in ───────────────────── */
-  const observerOpts = { threshold: 0.12 };
+  if (timerDisplay) {
+    // Verificar se já há um tempo salvo no sessionStorage
+    var endTime = sessionStorage.getItem('countdownEnd');
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+    if (!endTime) {
+      // Criar novo timer de 4 horas
+      endTime = Date.now() + (4 * 60 * 60 * 1000);
+      sessionStorage.setItem('countdownEnd', endTime);
+    } else {
+      endTime = parseInt(endTime, 10);
+      // Se o tempo já passou, reiniciar
+      if (endTime <= Date.now()) {
+        endTime = Date.now() + (4 * 60 * 60 * 1000);
+        sessionStorage.setItem('countdownEnd', endTime);
       }
-    });
-  }, observerOpts);
-
-  // Adiciona classe base e observa
-  const animateEls = document.querySelectorAll(
-    '.pain-card, .chapter-card, .bonus-card, .testimonial-card, .faq-item, .solution-inner, .guarantee-inner, .offer-box'
-  );
-
-  animateEls.forEach((el, idx) => {
-    el.style.opacity    = '0';
-    el.style.transform  = 'translateY(24px)';
-    el.style.transition = `opacity .5s ease ${(idx % 6) * 0.07}s, transform .5s ease ${(idx % 6) * 0.07}s`;
-    observer.observe(el);
-  });
-
-  // Ao entrar na viewport
-  document.head.insertAdjacentHTML('beforeend', `
-    <style>
-      .pain-card.visible, .chapter-card.visible, .bonus-card.visible,
-      .testimonial-card.visible, .faq-item.visible,
-      .solution-inner.visible, .guarantee-inner.visible, .offer-box.visible {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-      }
-    </style>
-  `);
-
-  /* ── Smooth scroll para âncoras ─────────────────────────── */
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', e => {
-      const target = document.querySelector(link.getAttribute('href'));
-      if (!target) return;
-      e.preventDefault();
-      const offset = 80;
-      const top    = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
-    });
-  });
-
-  /* ── Contagem regressiva no top bar (urgência) ─────────── */
-  const topBarText = document.querySelector('.top-bar__text');
-  if (topBarText) {
-    // Cria um contador de 4h a partir do carregamento da página
-    let totalSecs = 4 * 3600;
-
-    function pad(n) { return String(n).padStart(2, '0'); }
+    }
 
     function updateTimer() {
-      if (totalSecs <= 0) { clearInterval(timerInterval); return; }
-      totalSecs--;
-      const h = Math.floor(totalSecs / 3600);
-      const m = Math.floor((totalSecs % 3600) / 60);
-      const s = totalSecs % 60;
-      const timerSpan = document.getElementById('topbar-timer');
-      if (timerSpan) timerSpan.textContent = `${pad(h)}:${pad(m)}:${pad(s)}`;
+      var remaining = endTime - Date.now();
+
+      if (remaining <= 0) {
+        timerDisplay.textContent = '00:00:00';
+        return;
+      }
+
+      var hours   = Math.floor(remaining / 3600000);
+      var minutes = Math.floor((remaining % 3600000) / 60000);
+      var seconds = Math.floor((remaining % 60000) / 1000);
+
+      timerDisplay.textContent =
+        String(hours).padStart(2, '0') + ':' +
+        String(minutes).padStart(2, '0') + ':' +
+        String(seconds).padStart(2, '0');
     }
 
-    // Injeta o timer na top bar
-    topBarText.insertAdjacentHTML('beforeend',
-      ` • ⏱️ Oferta expira em: <strong id="topbar-timer" style="color:#ffe066">04:00:00</strong>`
-    );
-
-    const timerInterval = setInterval(updateTimer, 1000);
+    updateTimer();
+    setInterval(updateTimer, 1000);
   }
 
-  /* ── Highlight CTA ao scroll rápido ────────────────────── */
-  let lastScroll = 0;
-  const floatBtn = floatingCta ? floatingCta.querySelector('.btn') : null;
+  /* =============================================
+     4. SMOOTH SCROLL para links âncora
+  ============================================= */
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      var targetId = this.getAttribute('href');
+      if (!targetId || targetId === '#') return;
 
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    if (floatBtn && currentScroll > lastScroll + 100) {
-      floatBtn.style.animation = 'pulse 0.5s ease';
-      setTimeout(() => { if(floatBtn) floatBtn.style.animation = ''; }, 500);
-    }
-    lastScroll = currentScroll;
-  }, { passive: true });
+      var target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        var headerHeight = document.querySelector('.site-header')
+          ? document.querySelector('.site-header').offsetHeight
+          : 80;
 
-  // Animação pulse
-  document.head.insertAdjacentHTML('beforeend', `
-    <style>
-      @keyframes pulse {
-        0%   { transform: scale(1); }
-        50%  { transform: scale(1.05); }
-        100% { transform: scale(1); }
+        window.scrollTo({
+          top: target.getBoundingClientRect().top + window.scrollY - headerHeight - 20,
+          behavior: 'smooth'
+        });
       }
-    </style>
-  `);
+    });
+  });
+
+  /* =============================================
+     5. ANIMAÇÃO DE ENTRADA (fade-in ao rolar)
+  ============================================= */
+  var animatableElements = document.querySelectorAll(
+    '.pain-card, .chapter-card, .bonus-card, .testimonial-card, .guarantee-card, .offer-card, .faq-item'
+  );
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    animatableElements.forEach(function (el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  }
+
+  /* =============================================
+     6. VERIFICAÇÃO DA IMAGEM DA CAPA
+  ============================================= */
+  var covers = document.querySelectorAll('.hero-ebook-cover, .solution-cover, .offer-cover');
+
+  covers.forEach(function (img) {
+    // Verificar se a imagem carregou corretamente
+    if (img.complete && img.naturalHeight === 0) {
+      // Imagem falhou ao carregar — aplicar fallback
+      img.src = 'images/capa-ebook.jpg';
+    }
+
+    img.addEventListener('load', function () {
+      img.style.opacity = '1';
+    });
+
+    img.addEventListener('error', function () {
+      // Fallback: tentar arquivo local
+      if (!this.src.includes('capa-ebook.jpg')) {
+        this.src = 'images/capa-ebook.jpg';
+      }
+    });
+  });
 
 });
