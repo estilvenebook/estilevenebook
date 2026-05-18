@@ -2,77 +2,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- REBUILD: 2026-05-18T12:00:00Z -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <title>Amor que Protege – Guia Completo de Saúde Bucal Infantil</title>
-  <meta name="description" content="O guia completo de saúde bucal infantil para mães. Proteja o sorriso do seu filho do primeiro dentinho aos 12 anos. Com 5 bônus exclusivos por apenas R$ 29,90." />
+  <meta name="description" content="O guia completo de saúde bucal infantil para mães. Aprenda a cuidar dos dentes do seu filho dos 0 aos 12 anos com técnicas simples e eficazes." />
 
-  <!-- Preload mockup maternal (principal) -->
-  <link rel="preload" as="image" href="https://estilvenebook.com.br/images/capa-ebook.jpg" />
-  <!-- Preload capa original (fallback) -->
-  <link rel="preload" as="image" href="https://estilvenebook.com.br/images/capa-ebook.jpg" />
+  <!-- Preload da imagem da capa -->
+  <link rel="preload" as="image" href="https://www.genspark.ai/api/files/s/hCTAx8Ye" />
 
-  <!-- Google Fonts -->
+  <!-- Fontes Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
 
-  <!-- CSS -->
+  <!-- CSS Principal -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- ============================================================
-       TOP BAR - Oferta por Tempo Limitado
-  ============================================================ -->
+  <!-- ===== TOP BAR ===== -->
   <div class="top-bar">
-    <span class="top-bar__badge">⏰ OFERTA POR TEMPO LIMITADO</span>
-    <span class="top-bar__text">De <s>R$ 47,90</s> por apenas <strong>R$ 29,90</strong> • Acesso imediato + 5 Bônus Exclusivos</span>
+    <div class="top-bar-content">
+      <span class="top-bar-badge">⏰ OFERTA POR TEMPO LIMITADO</span>
+      <span class="top-bar-text">De <s>R$ 47,90</s> por apenas <strong>R$ 29,90</strong> • Acesso imediato + 5 Bônus Exclusivos</span>
+      <span class="countdown-timer" id="countdown-timer">⏱ Encerra em: <strong id="timer-display">04:00:00</strong></span>
+    </div>
   </div>
 
-  <!-- ============================================================
-       HEADER
-  ============================================================ -->
+  <!-- ===== HEADER ===== -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="header-logo">
-        <i class="fas fa-tooth logo-icon"></i>
-        <span class="logo-text">Amor que Protege</span>
+        <i class="fas fa-tooth"></i>
+        <span>Amor que Protege</span>
       </div>
-      <a href="https://pay.hotmart.com/I105642735J?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="btn btn--pink btn--sm header-cta">
-        Quero por R$ 29,90
+      <a href="https://pay.hotmart.com/I105642735J?checkoutMode=10" target="_blank" class="btn btn-pink btn-sm">
+        <i class="fas fa-shopping-cart"></i> Quero por R$ 29,90
       </a>
     </div>
   </header>
 
-  <!-- ============================================================
-       HERO
-  ============================================================ -->
-  <section class="hero" id="hero-section">
+  <!-- ===== HERO ===== -->
+  <section class="hero-section" id="hero">
     <div class="container hero-inner">
 
-      <!-- Conteúdo esquerdo -->
-      <div class="hero-content">
+      <!-- TEXTO HERO -->
+      <div class="hero-text">
         <div class="hero-badge">
-          <i class="fas fa-star"></i>
-          +3.000 MÃES JÁ TRANSFORMARAM O SORRISO DOS FILHOS
+          <i class="fas fa-star"></i> +3.000 MÃES JÁ TRANSFORMARAM O SORRISO DOS FILHOS
         </div>
 
         <h1 class="hero-headline">
-          O Sorriso do Seu Filho
-          <span class="highlight-pink">Merece ser Protegido</span>
+          O Sorriso do Seu Filho<br>
+          <span class="highlight-pink">Merece ser Protegido</span><br>
           Com Amor e Conhecimento
         </h1>
 
-        <p class="hero-sub">
-          O método que mais de <strong>3.000 mães</strong> já usaram para criar uma rotina de saúde bucal saudável — sem choro, sem briga, do primeiro dentinho aos 12 anos.
+        <p class="hero-subheadline">
+          O método que mais de 3.000 mães já usaram para criar uma rotina de saúde bucal saudável — <strong>sem choro, sem briga</strong>, do primeiro dentinho aos 12 anos.
         </p>
 
         <ul class="hero-benefits">
@@ -83,608 +76,535 @@
           <li><i class="fas fa-check-circle"></i> Linguagem simples, prática e acolhedora</li>
         </ul>
 
-        <!-- Caixa de preço -->
-        <div class="price-box">
-          <span class="price-old">De R$ 47,90</span>
-          <div class="price-new">
-            <span class="price-label">por apenas</span>
-            <span class="price-amount">R$ 29,90</span>
-          </div>
-          <p class="price-info">Pagamento único • Acesso vitalício • PDF digital</p>
+        <div class="hero-price-box">
+          <div class="price-old">De <s>R$ 47,90</s></div>
+          <div class="price-new">R$ 29,90</div>
+          <div class="price-info">Pagamento único • Acesso vitalício • PDF digital</div>
         </div>
 
-        <a href="https://pay.hotmart.com/I105642735J?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="btn btn--pink btn--lg hero-cta-btn">
-          <i class="fas fa-shopping-cart"></i>
-          Quero Proteger o Sorriso do Meu Filho Agora
+        <a href="https://pay.hotmart.com/I105642735J?checkoutMode=10" target="_blank" class="btn btn-pink btn-large">
+          <i class="fas fa-lock"></i> Quero Proteger o Sorriso do Meu Filho Agora
         </a>
 
-        <p class="hero-guarantee-note">
-          <i class="fas fa-shield-alt"></i>
-          Garantia incondicional de 7 dias • Sem risco para você
-        </p>
+        <div class="hero-trust">
+          <span><i class="fas fa-shield-alt"></i> 7 dias de garantia</span>
+          <span><i class="fas fa-bolt"></i> Acesso imediato</span>
+          <span><i class="fas fa-lock"></i> Compra 100% segura</span>
+        </div>
       </div>
 
-      <!-- Mockup Maternal - Lado Direito -->
-      <div class="hero-mockup">
-        <div class="mockup-wrapper">
-          <!-- Badge flutuante superior -->
-          <div class="badge-float badge-float--top-right">
-            <i class="fas fa-gift"></i>
-            +5 Bônus
-          </div>
-
-          <!-- Badge flutuante inferior -->
-          <div class="badge-float badge-float--bottom-left">
-            <i class="fas fa-shield-alt"></i>
-            7 dias de garantia
-          </div>
-
-          <!-- Mockup Maternal #3 -->
+      <!-- IMAGEM DA CAPA DO EBOOK -->
+      <div class="hero-image-wrapper">
+        <div class="hero-image-container">
           <img
-            src="https://estilvenebook.com.br/images/capa-ebook.jpg"
-            alt="Mockup do eBook Amor que Protege – Guia Completo de Saúde Bucal Infantil sendo segurado por mãos femininas em atmosfera maternal"
-            class="mockup-img"
+            src="https://www.genspark.ai/api/files/s/hCTAx8Ye"
+            alt="Capa do eBook Amor que Protege – Guia Completo de Saúde Bucal Infantil"
+            class="hero-ebook-cover"
             loading="eager"
-            onerror="this.onerror=null; this.src='https://estilvenebook.com.br/images/capa-ebook.jpg';"
+            width="400"
+            height="560"
+            onerror="this.onerror=null; this.style.background='linear-gradient(135deg, #FFB6C1, #87CEEB)'; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22560%22><rect fill=%22%23FFB6C1%22 width=%22400%22 height=%22560%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2224%22 text-anchor=%22middle%22 fill=%22%23fff%22>Amor que Protege</text></svg>';"
           />
+          <div class="badge-floating badge-bonus">🎁 +5 Bônus</div>
+          <div class="badge-floating badge-guarantee">🛡️ 7 dias de garantia</div>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ============================================================
-       SEÇÃO DOR - Identificação com a Mãe
-  ============================================================ -->
-  <section class="pain-section" id="dores">
+  <!-- ===== DOR ===== -->
+  <section class="pain-section section-pink-light" id="dor">
     <div class="container">
-      <h2 class="section-title">Você já se sentiu assim?</h2>
-      <p class="section-subtitle">Você não está sozinha. Essas são as dúvidas de <strong>milhares de mães</strong> todos os dias.</p>
-
+      <div class="section-header">
+        <h2 class="section-title">Você já se sentiu assim?</h2>
+        <p class="section-subtitle">Toda mãe preocupada com a saúde bucal do filho já passou por isso...</p>
+      </div>
       <div class="pain-grid">
         <div class="pain-card">
-          <div class="pain-icon"><i class="fas fa-heartbeat"></i></div>
-          <p>Meu filho tem medo do dentista e cada consulta é um drama sem fim</p>
+          <div class="pain-icon">😰</div>
+          <h3>Cáries aparecem do nada</h3>
+          <p>Você escova, mas as cáries continuam aparecendo e você não sabe o que está errando.</p>
         </div>
         <div class="pain-card">
-          <div class="pain-icon"><i class="fas fa-question-circle"></i></div>
-          <p>Descubro cáries de surpresa e me sinto péssima como mãe</p>
+          <div class="pain-icon">😭</div>
+          <h3>Medo do dentista</h3>
+          <p>Cada consulta é uma batalha com choro, gritos e muita resistência da criança.</p>
         </div>
         <div class="pain-card">
-          <div class="pain-icon"><i class="fas fa-frown"></i></div>
-          <p>Toda noite é uma batalha para fazer meu filho escovar os dentes</p>
+          <div class="pain-icon">🤔</div>
+          <h3>Fio dental impossível</h3>
+          <p>Você não consegue convencer seu filho a usar o fio dental nem tentando de tudo.</p>
         </div>
         <div class="pain-card">
-          <div class="pain-icon"><i class="fas fa-search"></i></div>
-          <p>Fico perdida na internet sem saber em qual informação confiar</p>
+          <div class="pain-icon">😔</div>
+          <h3>Informações contraditórias</h3>
+          <p>A internet diz uma coisa, o dentista diz outra, a avó diz mais uma... Confusão total!</p>
         </div>
         <div class="pain-card">
-          <div class="pain-icon"><i class="fas fa-sad-tear"></i></div>
-          <p>Sinto culpa quando meu filho come doce mas não sei o que é permitido</p>
+          <div class="pain-icon">😥</div>
+          <h3>Culpa e preocupação</h3>
+          <p>Você se sente culpada quando o dentista aponta um problema, como se tivesse falhado.</p>
         </div>
         <div class="pain-card">
-          <div class="pain-icon"><i class="fas fa-dollar-sign"></i></div>
-          <p>Tratamentos odontológicos infantis são caros e quero prevenir</p>
+          <div class="pain-icon">💸</div>
+          <h3>Gastos dentários altos</h3>
+          <p>As consultas odontológicas estão pesando no orçamento e você quer prevenir mais.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       SEÇÃO SOLUÇÃO
-  ============================================================ -->
+  <!-- ===== SOLUÇÃO ===== -->
   <section class="solution-section" id="solucao">
     <div class="container solution-inner">
-      <div class="solution-image">
-        <img
-          src="https://estilvenebook.com.br/images/capa-ebook.jpg"
-          alt="eBook Amor que Protege – Guia Completo de Saúde Bucal Infantil"
-          class="solution-cover"
-          loading="lazy"
-          onerror="this.onerror=null; this.src='https://estilvenebook.com.br/images/capa-ebook.jpg';"
-        />
-      </div>
-      <div class="solution-content">
-        <span class="section-tag"><i class="fas fa-book-open"></i> A SOLUÇÃO COMPLETA</span>
-        <h2 class="section-title left-align">Apresentando o <span class="highlight-pink">Amor que Protege</span></h2>
+      <div class="solution-text">
+        <div class="section-badge">✨ A SOLUÇÃO</div>
+        <h2 class="section-title">Tudo que você precisa saber sobre saúde bucal infantil em um único guia</h2>
         <p class="solution-desc">
-          Um guia completo e prático desenvolvido para mães como você: linguagem simples, orientações científicas e um passo a passo por faixa etária que vai transformar a saúde bucal do seu filho — e sua rotina em casa.
+          O <strong>"Amor que Protege"</strong> foi criado por especialistas em odontopediatria especialmente para mães como você — que querem fazer a coisa certa, mas precisam de orientação clara e prática.
+        </p>
+        <p class="solution-desc">
+          Em linguagem simples e acolhedora, você vai aprender exatamente o que fazer em cada fase do desenvolvimento do seu filho, do nascimento até os 12 anos.
         </p>
         <ul class="solution-list">
-          <li><i class="fas fa-check-circle"></i> Do nascimento até os 12 anos de idade</li>
+          <li><i class="fas fa-check-circle"></i> Guia completo com 10 capítulos organizados por idade</li>
           <li><i class="fas fa-check-circle"></i> Técnicas validadas por odontopediatras</li>
-          <li><i class="fas fa-check-circle"></i> Como tornar a escovação divertida</li>
-          <li><i class="fas fa-check-circle"></i> Guia de alimentação protetora</li>
-          <li><i class="fas fa-check-circle"></i> Como lidar com acidentes e traumas</li>
-          <li><i class="fas fa-check-circle"></i> Perguntas essenciais para o dentista</li>
+          <li><i class="fas fa-check-circle"></i> Linguagem acessível, sem termos técnicos difíceis</li>
+          <li><i class="fas fa-check-circle"></i> Prático para aplicar na rotina diária</li>
+          <li><i class="fas fa-check-circle"></i> Inclui 5 bônus exclusivos no valor de R$ 285,00</li>
         </ul>
-        <a href="https://pay.hotmart.com/I105642735J?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="btn btn--pink">
-          <i class="fas fa-lock"></i> Quero o eBook Agora — R$ 29,90
-        </a>
+      </div>
+      <div class="solution-image">
+        <img
+          src="https://www.genspark.ai/api/files/s/hCTAx8Ye"
+          alt="eBook Amor que Protege – Guia de Saúde Bucal Infantil"
+          class="solution-cover"
+          loading="lazy"
+          onerror="this.onerror=null;"
+        />
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       CAPÍTULOS / BENEFÍCIOS
-  ============================================================ -->
-  <section class="chapters-section" id="capitulos">
+  <!-- ===== CAPÍTULOS ===== -->
+  <section class="chapters-section section-pink-light" id="capitulos">
     <div class="container">
-      <span class="section-tag center"><i class="fas fa-book"></i> CONTEÚDO COMPLETO</span>
-      <h2 class="section-title">10 Capítulos por Faixa Etária</h2>
-      <p class="section-subtitle">Um guia que acompanha o crescimento do seu filho do primeiro dentinho até os 12 anos</p>
-
+      <div class="section-header">
+        <h2 class="section-title">O que você vai aprender nos <span class="highlight-pink">10 capítulos</span></h2>
+        <p class="section-subtitle">Conteúdo organizado por faixa etária para facilitar sua consulta</p>
+      </div>
       <div class="chapters-grid">
         <div class="chapter-card">
-          <span class="chapter-age">0–6 meses</span>
-          <h3>Capítulo 1</h3>
-          <p>Higiene bucal antes dos primeiros dentes, amamentação e cuidados com a gengiva do bebê</p>
+          <div class="chapter-age">0–6 meses</div>
+          <h3><i class="fas fa-baby"></i> Cap. 1: Antes do Primeiro Dentinho</h3>
+          <p>Higiene da gengiva, hábitos que formam antes dos dentes e como preparar o bebê desde o início.</p>
         </div>
         <div class="chapter-card">
-          <span class="chapter-age">6–12 meses</span>
-          <h3>Capítulo 2</h3>
-          <p>Primeiros dentes: como limpar, quando preocupar e o que esperar da primeira consulta</p>
+          <div class="chapter-age">6–12 meses</div>
+          <h3><i class="fas fa-tooth"></i> Cap. 2: Os Primeiros Dentes</h3>
+          <p>Como aliviar o desconforto da dentição, técnicas de escovação para dentes de leite e primeiros cuidados.</p>
         </div>
         <div class="chapter-card">
-          <span class="chapter-age">1–2 anos</span>
-          <h3>Capítulo 3</h3>
-          <p>Introdução da escova, pasta com flúor, chupeta e mamadeira — como fazer a transição</p>
+          <div class="chapter-age">1–2 anos</div>
+          <h3><i class="fas fa-child"></i> Cap. 3: Rotina de Escovação</h3>
+          <p>Transformar a escovação em um momento divertido e criar hábitos que durarão para sempre.</p>
         </div>
         <div class="chapter-card">
-          <span class="chapter-age">2–3 anos</span>
-          <h3>Capítulo 4</h3>
-          <p>Autonomia progressiva, fio dental, rotina de 2 minutos que funciona</p>
+          <div class="chapter-age">2–3 anos</div>
+          <h3><i class="fas fa-smile"></i> Cap. 4: Fio Dental e Flúor</h3>
+          <p>Quando introduzir o fio dental, como usar corretamente e a verdade sobre o flúor para crianças.</p>
         </div>
         <div class="chapter-card">
-          <span class="chapter-age">3–5 anos</span>
-          <h3>Capítulo 5</h3>
-          <p>Prevenção de cáries, alimentação saudável e como preparar para consultas sem choro</p>
+          <div class="chapter-age">3–5 anos</div>
+          <h3><i class="fas fa-apple-alt"></i> Cap. 5: Alimentação e Dentes</h3>
+          <p>Quais alimentos protegem os dentes, quais causam cáries e como montar lanches saudáveis.</p>
         </div>
         <div class="chapter-card">
-          <span class="chapter-age">5–7 anos</span>
-          <h3>Capítulo 6</h3>
-          <p>Troca dos dentes de leite, selantes, ortodontia preventiva — o que é normal</p>
+          <div class="chapter-age">4–6 anos</div>
+          <h3><i class="fas fa-hospital"></i> Cap. 6: Primeira Consulta</h3>
+          <p>Como preparar seu filho para ir ao dentista sem medo, o que esperar e como tornar a experiência positiva.</p>
         </div>
         <div class="chapter-card">
-          <span class="chapter-age">7–9 anos</span>
-          <h3>Capítulo 7</h3>
-          <p>Autonomia na escovação, supervisão inteligente e hábitos que duram para sempre</p>
+          <div class="chapter-age">5–7 anos</div>
+          <h3><i class="fas fa-star"></i> Cap. 7: Troca dos Dentes</h3>
+          <p>O que é normal na queda dos dentes de leite, como cuidar e quando se preocupar.</p>
         </div>
         <div class="chapter-card">
-          <span class="chapter-age">9–12 anos</span>
-          <h3>Capítulo 8</h3>
-          <p>Dentes permanentes, alimentação da adolescência e prevenção dos problemas mais comuns</p>
+          <div class="chapter-age">6–9 anos</div>
+          <h3><i class="fas fa-shield-alt"></i> Cap. 8: Dentes Permanentes</h3>
+          <p>Cuidados especiais com os dentes definitivos e como protegê-los desde o início.</p>
         </div>
-        <div class="chapter-card chapter-card--special">
-          <span class="chapter-age">Especial</span>
-          <h3>Capítulo 9</h3>
-          <p>Traumas dentários: o que fazer em emergências, quedas e acidentes — guia de primeiros socorros</p>
+        <div class="chapter-card">
+          <div class="chapter-age">8–10 anos</div>
+          <h3><i class="fas fa-running"></i> Cap. 9: Esportes e Traumas</h3>
+          <p>O que fazer em casos de quedas, dentes quebrados e como usar protetores bucais.</p>
         </div>
-        <div class="chapter-card chapter-card--special">
-          <span class="chapter-age">Especial</span>
-          <h3>Capítulo 10</h3>
-          <p>Nutrição que protege os dentes: alimentos aliados e vilões explicados de forma simples</p>
+        <div class="chapter-card">
+          <div class="chapter-age">10–12 anos</div>
+          <h3><i class="fas fa-user-graduate"></i> Cap. 10: Autonomia e Adolescência</h3>
+          <p>Como ensinar seu filho a cuidar dos próprios dentes e prepará-lo para a adolescência.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       BÔNUS
-  ============================================================ -->
-  <section class="bonus-section" id="bonus">
+  <!-- ===== BÔNUS ===== -->
+  <section class="bonuses-section" id="bonus">
     <div class="container">
-      <div class="bonus-header">
-        <span class="section-tag center light"><i class="fas fa-gift"></i> BÔNUS EXCLUSIVOS</span>
-        <h2 class="section-title light">Você Ganha Tudo Isso Também!</h2>
-        <p class="section-subtitle light">5 presentes especiais para transformar ainda mais a rotina da sua família</p>
-        <div class="bonus-total-value">
-          Valor total dos bônus: <span>R$ 285,00</span> — Tudo GRÁTIS para você!
+      <div class="section-header">
+        <div class="section-badge">🎁 BÔNUS EXCLUSIVOS</div>
+        <h2 class="section-title">Você também recebe <span class="highlight-pink">5 bônus incríveis</span></h2>
+        <p class="section-subtitle">Totalmente grátis no valor de <strong>R$ 285,00</strong> — incluídos na sua compra</p>
+      </div>
+      <div class="bonuses-grid">
+        <div class="bonus-card">
+          <div class="bonus-number">01</div>
+          <div class="bonus-icon">📅</div>
+          <h3 class="bonus-title">Planner Mensal Imprimível</h3>
+          <p class="bonus-desc">12 meses de acompanhamento diário: escovação, fio dental, consultas e conquistas. Imprima e transforme em rotina.</p>
+          <div class="bonus-value">Valor: R$ 37,00</div>
+        </div>
+        <div class="bonus-card">
+          <div class="bonus-number">02</div>
+          <div class="bonus-icon">🥗</div>
+          <h3 class="bonus-title">Receitas que Protegem os Dentes</h3>
+          <p class="bonus-desc">15+ receitas práticas de lanches, refeições e sobremesas que fortalecem o esmalte — e que as crianças adoram.</p>
+          <div class="bonus-value">Valor: R$ 47,00</div>
+        </div>
+        <div class="bonus-card">
+          <div class="bonus-number">03</div>
+          <div class="bonus-icon">📖</div>
+          <h3 class="bonus-title">Histórias Mágicas + Cartaz de Rotina</h3>
+          <p class="bonus-desc">3 histórias infantis (Cavaleiro Escovinha, Fada Dentinho e mais) + Cartaz imprimível para o banheiro.</p>
+          <div class="bonus-value">Valor: R$ 57,00</div>
+        </div>
+        <div class="bonus-card">
+          <div class="bonus-number">04</div>
+          <div class="bonus-icon">🗺️</div>
+          <h3 class="bonus-title">Passaporte do Sorriso + Guia do Dentista</h3>
+          <p class="bonus-desc">40+ perguntas essenciais para fazer ao odontopediatra + mapa dos dentes + histórico completo da criança.</p>
+          <div class="bonus-value">Valor: R$ 67,00</div>
+        </div>
+        <div class="bonus-card bonus-card-special">
+          <div class="bonus-number">05</div>
+          <div class="bonus-icon">💕</div>
+          <h3 class="bonus-title">O Sorriso da Mãe Também Importa</h3>
+          <p class="bonus-desc">Guia especial para você, mãe: saúde bucal na gestação, pós-parto, e rotina para quem não tem tempo — mas quer se cuidar.</p>
+          <div class="bonus-value">Valor: R$ 77,00</div>
         </div>
       </div>
-
-      <div class="bonus-grid">
-
-        <div class="bonus-card">
-          <div class="bonus-icon-wrap"><i class="fas fa-calendar-check"></i></div>
-          <div class="bonus-value-tag">R$ 37,00</div>
-          <h3>Bônus #1</h3>
-          <h4>Planner Mensal Imprimível</h4>
-          <p>12 meses de acompanhamento diário: escovação, fio dental, consultas e conquistas. Imprima e transforme em rotina.</p>
-        </div>
-
-        <div class="bonus-card">
-          <div class="bonus-icon-wrap"><i class="fas fa-utensils"></i></div>
-          <div class="bonus-value-tag">R$ 47,00</div>
-          <h3>Bônus #2</h3>
-          <h4>Receitas que Protegem os Dentes</h4>
-          <p>15+ receitas práticas de lanches, refeições e sobremesas que fortalecem o esmalte — e que as crianças adoram.</p>
-        </div>
-
-        <div class="bonus-card">
-          <div class="bonus-icon-wrap"><i class="fas fa-star"></i></div>
-          <div class="bonus-value-tag">R$ 57,00</div>
-          <h3>Bônus #3</h3>
-          <h4>Histórias Mágicas + Cartaz de Rotina</h4>
-          <p>3 histórias infantis (Cavaleiro Escovinha, Fada Dentinho e mais) + Cartaz imprimível para o banheiro.</p>
-        </div>
-
-        <div class="bonus-card">
-          <div class="bonus-icon-wrap"><i class="fas fa-passport"></i></div>
-          <div class="bonus-value-tag">R$ 67,00</div>
-          <h3>Bônus #4</h3>
-          <h4>Passaporte do Sorriso + Guia do Dentista</h4>
-          <p>40+ perguntas essenciais para fazer ao odontopediatra + mapa dos dentes + histórico completo da criança.</p>
-        </div>
-
-        <div class="bonus-card bonus-card--special">
-          <div class="bonus-icon-wrap"><i class="fas fa-heart"></i></div>
-          <div class="bonus-value-tag">R$ 77,00</div>
-          <h3>Bônus #5</h3>
-          <h4>O Sorriso da Mãe Também Importa</h4>
-          <p>Guia especial para você, mãe: saúde bucal na gestação, pós-parto, e rotina para quem não tem tempo — mas quer se cuidar.</p>
-        </div>
-
-      </div>
-
-      <div class="bonus-cta-wrap">
-        <a href="https://pay.hotmart.com/I105642735J?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="btn btn--white btn--lg">
-          <i class="fas fa-gift"></i>
-          Quero o eBook + Todos os Bônus por R$ 29,90
-        </a>
+      <div class="bonuses-total">
+        <p>Valor total dos bônus: <strong>R$ 285,00</strong> — Você recebe <span class="highlight-pink">GRÁTIS!</span></p>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       TRANSFORMAÇÃO / DEPOIMENTOS
-  ============================================================ -->
-  <section class="testimonials-section" id="depoimentos">
+  <!-- ===== DEPOIMENTOS ===== -->
+  <section class="testimonials-section section-pink-light" id="depoimentos">
     <div class="container">
-      <span class="section-tag center"><i class="fas fa-comments"></i> DEPOIMENTOS REAIS</span>
-      <h2 class="section-title">O Que as Mães Estão Dizendo</h2>
-      <p class="section-subtitle">Histórias reais de famílias que transformaram a rotina de saúde bucal</p>
-
+      <div class="section-header">
+        <h2 class="section-title">O que as mães estão dizendo</h2>
+        <p class="section-subtitle">Mais de 3.000 famílias já transformaram o sorriso dos seus filhos</p>
+      </div>
       <div class="testimonials-grid">
-
         <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"Minha filha de 4 anos tinha medo de escovar os dentes. Depois que li o capítulo 5 e usei as dicas, ela mesma pede para escovar! Não acreditei quando aconteceu. Esse guia mudou completamente nossa rotina."</p>
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Meu filho tinha pavor de dentista. Depois das dicas do guia, a última consulta foi tranquila. Ele até perguntou quando seria a próxima!"</p>
           <div class="testimonial-author">
-            <div class="author-avatar"><i class="fas fa-user"></i></div>
+            <div class="testimonial-avatar">A</div>
             <div>
-              <strong>Ana Carolina M.</strong>
-              <span>Mãe da Sophia, 4 anos</span>
+              <strong>Ana Cristina M.</strong>
+              <span>Mãe do Lucas, 6 anos</span>
             </div>
           </div>
         </div>
-
-        <div class="testimonial-card testimonial-card--featured">
-          <div class="testimonial-badge">⭐ Mais votado</div>
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"Como mãe de primeira viagem, ficava com muito medo de não cuidar direito dos dentes do meu bebê. O guia tirou todas as minhas dúvidas e me deu confiança. As histórias mágicas do bônus são incríveis!"</p>
-          <div class="testimonial-author">
-            <div class="author-avatar"><i class="fas fa-user"></i></div>
-            <div>
-              <strong>Fernanda L.</strong>
-              <span>Mãe do Miguel, 2 anos</span>
-            </div>
-          </div>
-        </div>
-
         <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"Meu filho de 7 anos tinha pavor de dentista desde pequeno. Com as técnicas do capítulo 6 e as perguntas do Passaporte do Sorriso, conseguimos transformar as consultas em algo tranquilo. Valeu cada centavo!"</p>
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Apliquei as técnicas de escovação e em 3 meses a dentista confirmou: sem novas cáries! O investimento mais valioso que fiz."</p>
           <div class="testimonial-author">
-            <div class="author-avatar"><i class="fas fa-user"></i></div>
-            <div>
-              <strong>Juliana R.</strong>
-              <span>Mãe do Pedro, 7 anos</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"As receitas do bônus 2 foram um achado! Minha filha ama os lanchinhos e eu fico tranquila sabendo que são bons para os dentes. O planner mensal nos ajudou a criar uma rotina incrível em poucas semanas."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar"><i class="fas fa-user"></i></div>
+            <div class="testimonial-avatar">M</div>
             <div>
               <strong>Mariana S.</strong>
-              <span>Mãe da Laura, 5 anos</span>
+              <span>Mãe da Sofia, 4 anos</span>
             </div>
           </div>
         </div>
-
         <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"Comprei com medo de ser mais um ebook vazio. Me surpreendi! A linguagem é simples, prática e parece que a autora está conversando com você. Em 2 semanas a rotina do meu filho mudou completamente."</p>
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"O Planner Imprimível foi um divisor de águas! Minha filha agora lembra sozinha de escovar os dentes. Ela mesma marca no calendário!"</p>
           <div class="testimonial-author">
-            <div class="author-avatar"><i class="fas fa-user"></i></div>
+            <div class="testimonial-avatar">P</div>
             <div>
-              <strong>Priscila O.</strong>
-              <span>Mãe do João, 9 anos</span>
+              <strong>Patricia L.</strong>
+              <span>Mãe da Isabela, 7 anos</span>
             </div>
           </div>
         </div>
-
         <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testimonial-text">"Tenho 3 filhos com idades diferentes e o guia cobriu TODOS. Cada capítulo por faixa etária é perfeito. Finalmente tenho um material completo que responde às minhas dúvidas específicas de cada fase."</p>
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"As histórias do bônus foram mágicas! A Fada Dentinho virou personagem favorita do meu filho. Agora ele quer escovar para 'agradar a fadinha'!"</p>
           <div class="testimonial-author">
-            <div class="author-avatar"><i class="fas fa-user"></i></div>
+            <div class="testimonial-avatar">F</div>
             <div>
-              <strong>Camila B.</strong>
-              <span>Mãe de 3 filhos, 2, 5 e 8 anos</span>
+              <strong>Fernanda R.</strong>
+              <span>Mãe do Miguel, 3 anos</span>
             </div>
           </div>
         </div>
-
+        <div class="testimonial-card">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Comprei com dúvida, mas valeu cada centavo. O guia é completo, claro e fácil de entender. Super recomendo para todas as mães!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">C</div>
+            <div>
+              <strong>Camila T.</strong>
+              <span>Mãe do Pedro e da Alice</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"O bônus 'O Sorriso da Mãe também Importa' foi um presente! Finalmente um guia que cuida da minha saúde bucal também. Me sinto mais completa!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">J</div>
+            <div>
+              <strong>Juliana N.</strong>
+              <span>Mãe da Clara, 5 anos</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       GARANTIA
-  ============================================================ -->
+  <!-- ===== GARANTIA ===== -->
   <section class="guarantee-section" id="garantia">
-    <div class="container guarantee-inner">
-      <div class="guarantee-icon">
-        <i class="fas fa-shield-alt"></i>
-        <span>7</span>
-        <small>dias</small>
-      </div>
-      <div class="guarantee-content">
-        <h2>Risco Zero: Garantia Incondicional de 7 Dias</h2>
-        <p>
-          Estou tão confiante de que o <strong>Amor que Protege</strong> vai transformar a rotina de saúde bucal da sua família que ofereço uma garantia total de 7 dias. Se por qualquer motivo você não ficar satisfeita, basta enviar um e-mail e devolveremos 100% do seu dinheiro. Sem perguntas, sem burocracia.
-        </p>
-        <p>
-          <strong>Você não tem nada a perder — e tem tudo a ganhar!</strong>
-        </p>
-        <a href="https://pay.hotmart.com/I105642735J?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="btn btn--pink btn--lg">
-          <i class="fas fa-lock"></i> Quero com Garantia Total — R$ 29,90
-        </a>
+    <div class="container">
+      <div class="guarantee-card">
+        <div class="guarantee-icon">🛡️</div>
+        <div class="guarantee-content">
+          <h2>Risco Zero: Garantia Incondicional de <span class="highlight-pink">7 Dias</span></h2>
+          <p>
+            Experimente o guia por 7 dias completos. Se por qualquer motivo você não ficar 100% satisfeita, basta enviar um e-mail e devolvemos <strong>todo o seu dinheiro</strong>, sem perguntas e sem burocracia.
+          </p>
+          <p>
+            Você não tem nada a perder — só o sorriso saudável do seu filho a ganhar! 💕
+          </p>
+          <div class="guarantee-badges">
+            <span><i class="fas fa-check"></i> Reembolso total</span>
+            <span><i class="fas fa-check"></i> Sem perguntas</span>
+            <span><i class="fas fa-check"></i> 7 dias de prazo</span>
+            <span><i class="fas fa-check"></i> Compra 100% segura</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       OFERTA FINAL
-  ============================================================ -->
+  <!-- ===== OFERTA FINAL ===== -->
   <section class="offer-section" id="oferta">
     <div class="container">
-      <span class="section-tag center light"><i class="fas fa-tag"></i> OFERTA ESPECIAL</span>
-      <h2 class="section-title light">Tudo Isso por Apenas <span class="price-highlight">R$ 29,90</span></h2>
-
-      <div class="offer-box">
-        <div class="offer-image">
-          <img
-            src="https://estilvenebook.com.br/images/capa-ebook.jpg"
-            alt="eBook Amor que Protege - Mockup Maternal"
-            loading="lazy"
-            onerror="this.onerror=null; this.src='https://estilvenebook.com.br/images/capa-ebook.jpg';"
-            class="offer-mockup-img"
-          />
+      <div class="offer-card">
+        <div class="offer-header">
+          <h2>Tudo que você recebe hoje</h2>
+          <p>Uma única compra, acesso vitalício a tudo isso:</p>
         </div>
-        <div class="offer-details">
-          <h3>Você recebe:</h3>
-          <ul class="offer-list">
-            <li><i class="fas fa-check-circle"></i> eBook Principal – Guia Completo de Saúde Bucal (10 capítulos)</li>
-            <li><i class="fas fa-gift"></i> <strong>Bônus #1:</strong> Planner Mensal Imprimível <em>(R$ 37,00)</em></li>
-            <li><i class="fas fa-gift"></i> <strong>Bônus #2:</strong> Receitas que Protegem os Dentes <em>(R$ 47,00)</em></li>
-            <li><i class="fas fa-gift"></i> <strong>Bônus #3:</strong> Histórias Mágicas + Cartaz de Rotina <em>(R$ 57,00)</em></li>
-            <li><i class="fas fa-gift"></i> <strong>Bônus #4:</strong> Passaporte do Sorriso + Guia do Dentista <em>(R$ 67,00)</em></li>
-            <li><i class="fas fa-gift"></i> <strong>Bônus #5:</strong> O Sorriso da Mãe Também Importa <em>(R$ 77,00)</em></li>
-          </ul>
-
-          <div class="offer-total">
-            <span class="total-label">Valor total:</span>
-            <span class="total-old">R$ 332,90</span>
-            <span class="total-now">R$ 29,90</span>
+        <div class="offer-inner">
+          <div class="offer-image">
+            <img
+              src="https://www.genspark.ai/api/files/s/hCTAx8Ye"
+              alt="eBook Amor que Protege"
+              class="offer-cover"
+              loading="lazy"
+              onerror="this.onerror=null;"
+            />
           </div>
+          <div class="offer-details">
+            <ul class="offer-list">
+              <li><i class="fas fa-check-circle"></i> <strong>eBook "Amor que Protege"</strong> — 10 capítulos completos</li>
+              <li><i class="fas fa-gift"></i> <strong>Bônus 01:</strong> Planner Mensal Imprimível — <s>R$ 37,00</s></li>
+              <li><i class="fas fa-gift"></i> <strong>Bônus 02:</strong> Receitas que Protegem os Dentes — <s>R$ 47,00</s></li>
+              <li><i class="fas fa-gift"></i> <strong>Bônus 03:</strong> Histórias Mágicas + Cartaz de Rotina — <s>R$ 57,00</s></li>
+              <li><i class="fas fa-gift"></i> <strong>Bônus 04:</strong> Passaporte do Sorriso + Guia do Dentista — <s>R$ 67,00</s></li>
+              <li><i class="fas fa-gift"></i> <strong>Bônus 05:</strong> O Sorriso da Mãe Também Importa — <s>R$ 77,00</s></li>
+            </ul>
 
-          <a href="https://pay.hotmart.com/I105642735J?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="btn btn--pink btn--xl offer-cta-btn">
-            <i class="fas fa-shopping-cart"></i>
-            Quero Tudo Isso por R$ 29,90 — Acesso Imediato!
-          </a>
+            <div class="offer-total">
+              <div class="offer-value-total">Valor total: <s>R$ 332,90</s></div>
+              <div class="offer-price-label">Hoje por apenas</div>
+              <div class="offer-price">R$ 29,90</div>
+              <div class="offer-economy">Economia de R$ 303,00 (91% OFF)</div>
+            </div>
 
-          <div class="offer-trust">
-            <span><i class="fas fa-lock"></i> Pagamento seguro</span>
-            <span><i class="fas fa-shield-alt"></i> Garantia 7 dias</span>
-            <span><i class="fas fa-bolt"></i> Acesso imediato</span>
-            <span><i class="fas fa-infinity"></i> Acesso vitalício</span>
+            <a href="https://pay.hotmart.com/I105642735J?checkoutMode=10" target="_blank" class="btn btn-pink btn-large btn-full">
+              <i class="fas fa-lock"></i> QUERO COMEÇAR AGORA POR R$ 29,90
+            </a>
+
+            <div class="offer-security">
+              <span><i class="fas fa-lock"></i> Compra segura</span>
+              <span><i class="fas fa-bolt"></i> Acesso imediato</span>
+              <span><i class="fas fa-shield-alt"></i> 7 dias de garantia</span>
+              <span><i class="fas fa-credit-card"></i> Parcelamento disponível</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       FAQ
-  ============================================================ -->
-  <section class="faq-section" id="faq">
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section section-pink-light" id="faq">
     <div class="container">
-      <span class="section-tag center"><i class="fas fa-question-circle"></i> PERGUNTAS FREQUENTES</span>
-      <h2 class="section-title">Dúvidas? A gente responde!</h2>
-
+      <div class="section-header">
+        <h2 class="section-title">Perguntas Frequentes</h2>
+        <p class="section-subtitle">Tire todas as suas dúvidas antes de comprar</p>
+      </div>
       <div class="faq-list">
-
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            <span>Para qual idade esse guia é indicado?</span>
+            <span>Como vou receber o guia após a compra?</span>
             <i class="fas fa-chevron-down faq-icon"></i>
           </button>
           <div class="faq-answer">
-            <p>O guia cobre do nascimento (0 meses) até os 12 anos. São 10 capítulos organizados por faixa etária, com orientações específicas para cada fase do desenvolvimento da criança.</p>
+            <p>Após a confirmação do pagamento, você receberá um e-mail com o link para download imediato do guia em PDF e acesso a todos os bônus. Todo o processo é automático e leva menos de 5 minutos.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            <span>Como vou receber o eBook e os bônus?</span>
+            <span>O guia substitui a consulta com dentista?</span>
             <i class="fas fa-chevron-down faq-icon"></i>
           </button>
           <div class="faq-answer">
-            <p>Após a confirmação do pagamento, você receberá um e-mail com o link de acesso. O acesso é imediato — você pode começar a ler em minutos, pelo celular, tablet ou computador.</p>
+            <p>Não. O guia é educativo e complementar ao acompanhamento profissional. Ele vai te preparar com conhecimento para cuidar melhor dos dentes do seu filho no dia a dia e para fazer as perguntas certas ao dentista.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            <span>Esse guia substitui a consulta com o dentista?</span>
+            <span>Para qual faixa etária o guia é indicado?</span>
             <i class="fas fa-chevron-down faq-icon"></i>
           </button>
           <div class="faq-answer">
-            <p>Não. O "Amor que Protege" é um material educativo complementar. Ele te dará todo o conhecimento para ser uma mãe mais preparada e consciente, mas não substitui as consultas regulares com o odontopediatra.</p>
+            <p>O guia cobre desde o nascimento até os 12 anos, com capítulos específicos para cada fase do desenvolvimento. Independente da idade do seu filho, você encontrará informações relevantes e aplicáveis.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>Como funciona a garantia de 7 dias?</span>
             <i class="fas fa-chevron-down faq-icon"></i>
           </button>
           <div class="faq-answer">
-            <p>Se dentro de 7 dias após a compra você não estiver satisfeita por qualquer motivo, basta entrar em contato e devolveremos 100% do valor pago. Sem perguntas, sem burocracia. O risco é todo nosso!</p>
+            <p>Se dentro de 7 dias após a compra você não estiver satisfeita por qualquer motivo, basta enviar um e-mail para nosso suporte e faremos o reembolso total, sem perguntas e sem burocracia.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            <span>Posso comprar como presente para uma amiga?</span>
+            <span>Em que formato vem o guia e como acesso?</span>
             <i class="fas fa-chevron-down faq-icon"></i>
           </button>
           <div class="faq-answer">
-            <p>Sim! O eBook é um presente perfeito para mães grávidas, mães de primeira viagem ou qualquer mãe que queira cuidar melhor da saúde bucal do filho. Você pode presentear informando o e-mail da destinatária na compra.</p>
+            <p>O guia é entregue em formato PDF digital, que pode ser lido em qualquer dispositivo (computador, tablet, celular) ou impresso. O acesso é vitalício — você poderá baixar e consultar quando quiser.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            <span>O Planner Mensal precisa ser impresso?</span>
+            <span>Quem criou o "Amor que Protege"?</span>
             <i class="fas fa-chevron-down faq-icon"></i>
           </button>
           <div class="faq-answer">
-            <p>O Planner é fornecido em formato PDF imprimível, mas você também pode usá-lo digitalmente em tablets com stylus. Para melhor aproveitamento, recomendamos impressão em papel A4 ou A5.</p>
+            <p>O guia foi desenvolvido pela equipe Estileven Ebook Odonto, com embasamento em odontopediatria e cuidado materno, trazendo informações validadas para que mães tenham o conhecimento necessário para cuidar da saúde bucal dos filhos.</p>
           </div>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>Por quanto tempo terei acesso ao material?</span>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Seu acesso é vitalício! Após a compra, o material fica disponível para download e consulta para sempre, na plataforma Hotmart. Você pode baixar e guardar no seu dispositivo.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>As histórias mágicas são para qual faixa etária?</span>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </button>
-          <div class="faq-answer">
-            <p>As histórias foram criadas para crianças de 2 a 7 anos — justamente a fase em que os pequenos precisam ser incentivados a escovar os dentes. Os personagens Cavaleiro Escovinha e Fada Dentinho são encantadores e as crianças adoram!</p>
-          </div>
-        </div>
-
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>O pagamento é seguro?</span>
             <i class="fas fa-chevron-down faq-icon"></i>
           </button>
           <div class="faq-answer">
-            <p>Sim! O pagamento é processado pela Hotmart, uma das maiores plataformas de produtos digitais do mundo. Você pode pagar via Pix, cartão de crédito (até 12x) ou boleto bancário, com total segurança.</p>
+            <p>Sim! O pagamento é processado pela Hotmart, plataforma líder no Brasil, com certificado SSL e todas as medidas de segurança. Seus dados estão 100% protegidos.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            <span>Funciona para mães que já têm filhos maiores de 12 anos?</span>
+            <span>Posso parcelar a compra?</span>
             <i class="fas fa-chevron-down faq-icon"></i>
           </button>
           <div class="faq-answer">
-            <p>O guia foca na faixa de 0–12 anos. Porém, o bônus #5 "O Sorriso da Mãe Também Importa" é exclusivo para você, independente da idade dos filhos. Para crianças maiores, recomendamos consultar um ortodontista.</p>
+            <p>Sim! Você pode parcelar no cartão de crédito. No valor de R$ 29,90, as parcelas ficam extremamente acessíveis. Verifique as opções disponíveis na página de checkout da Hotmart.</p>
           </div>
         </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       CTA FINAL
-  ============================================================ -->
-  <section class="final-cta-section" id="cta-final">
-    <div class="container final-cta-inner">
-      <div class="final-cta-content">
-        <h2>Seu Filho Merece o Melhor Sorriso. <span class="highlight-pink">Você Merece Essa Segurança.</span></h2>
-        <p>Junte-se às mais de 3.000 mães que já transformaram a saúde bucal de suas famílias com o <strong>Amor que Protege</strong>.</p>
-
-        <div class="final-price-box">
-          <div class="final-price-old">De R$ 47,90</div>
-          <div class="final-price-new">R$ 29,90</div>
-          <p>Pagamento único • Acesso imediato • Garantia de 7 dias</p>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Os bônus são entregues junto com o guia?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Sim! Todos os 5 bônus são entregues no mesmo momento que o guia principal, logo após a confirmação do pagamento. Você terá acesso a tudo imediatamente.</p>
+          </div>
         </div>
-
-        <a href="https://pay.hotmart.com/I105642735J?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="btn btn--pink btn--xl final-cta-btn">
-          <i class="fas fa-heart"></i>
-          Sim! Quero Proteger o Sorriso do Meu Filho Agora
-        </a>
-
-        <p class="final-cta-note">
-          <i class="fas fa-lock"></i> Ambiente 100% seguro | Hotmart | Acesso imediato após confirmação do pagamento
-        </p>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Funciona mesmo para crianças que já têm cáries?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Sim! O guia é valioso tanto para prevenir cáries quanto para quem já está enfrentando o problema. Você aprenderá como parar o avanço e criar hábitos que protejam os dentes que ainda estão saudáveis.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
-  <footer class="site-footer" id="rodape">
-    <div class="container footer-inner">
-      <div class="footer-logo">
-        <i class="fas fa-tooth"></i>
-        <span>Amor que Protege</span>
+  <!-- ===== CTA FINAL ===== -->
+  <section class="cta-final-section" id="cta-final">
+    <div class="container">
+      <div class="cta-final-content">
+        <h2>Não deixe para amanhã o cuidado que o sorriso do seu filho precisa hoje</h2>
+        <p>Junte-se a mais de 3.000 mães que já transformaram a saúde bucal dos seus filhos com o "Amor que Protege".</p>
+        <div class="cta-final-price">
+          <span class="cta-price-old">De R$ 47,90</span>
+          <span class="cta-price-new">R$ 29,90</span>
+        </div>
+        <a href="https://pay.hotmart.com/I105642735J?checkoutMode=10" target="_blank" class="btn btn-pink btn-large btn-glow">
+          <i class="fas fa-heart"></i> SIM, QUERO PROTEGER O SORRISO DO MEU FILHO!
+        </a>
+        <div class="cta-final-trust">
+          <span><i class="fas fa-shield-alt"></i> Garantia de 7 dias</span>
+          <span><i class="fas fa-bolt"></i> Acesso imediato</span>
+          <span><i class="fas fa-lock"></i> Pagamento seguro</span>
+        </div>
       </div>
-      <nav class="footer-nav" aria-label="Links do rodapé">
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-brand">
+        <i class="fas fa-tooth"></i>
+        <strong>Amor que Protege</strong>
+        <span>Guia Completo de Saúde Bucal Infantil</span>
+      </div>
+      <div class="footer-links">
         <a href="#">Política de Privacidade</a>
         <a href="#">Termos de Uso</a>
         <a href="mailto:contato@amorqueprotege.com.br">Suporte</a>
-      </nav>
-      <p class="footer-disclaimer">
-        <strong>Aviso Legal:</strong> Este material é exclusivamente educativo e informativo. Não substitui a avaliação, diagnóstico ou tratamento por um profissional odontológico qualificado. Consulte sempre um odontopediatra para cuidados específicos do seu filho.
-      </p>
-      <p class="footer-copyright">© 2026 Amor que Protege – Estileven Ebook Odonto. Todos os direitos reservados.</p>
+      </div>
+      <div class="footer-disclaimer">
+        <p>Este material é educativo e não substitui o acompanhamento profissional de um cirurgião-dentista. Consulte sempre um odontopediatra para orientações personalizadas.</p>
+        <p>© 2025 Amor que Protege – Estileven Ebook Odonto. Todos os direitos reservados.</p>
+      </div>
     </div>
   </footer>
 
-  <!-- ============================================================
-       FLOATING CTA
-  ============================================================ -->
-  <div class="floating-cta" id="floating-cta" aria-label="Botão de compra flutuante">
-    <a href="https://pay.hotmart.com/I105642735J?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="btn btn--pink">
-      <i class="fas fa-shopping-cart"></i>
-      🛒 Quero por R$ 29,90 — Acesso Imediato
+  <!-- ===== FLOATING CTA ===== -->
+  <div class="floating-cta" id="floating-cta">
+    <a href="https://pay.hotmart.com/I105642735J?checkoutMode=10" target="_blank" class="btn btn-pink">
+      <i class="fas fa-shopping-cart"></i> 🛒 Quero por R$ 29,90 — Acesso Imediato
     </a>
   </div>
 
-  <!-- JS -->
+  <!-- JavaScript -->
   <script src="js/main.js"></script>
 </body>
 </html>
