@@ -15,636 +15,8 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
 
-  <style>
-/* ========================================
-   AMOR QUE PROTEGE - LANDING PAGE STYLES
-   ======================================== */
-
-/* --- Reset & Variables --- */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --blue-dark:   #1a3f6f;
-  --blue-mid:    #2563a8;
-  --blue-light:  #e8f0fb;
-  --blue-pale:   #f0f6ff;
-  --pink-dark:   #c2185b;
-  --pink-mid:    #e91e8c;
-  --pink-soft:   #f48fb1;
-  --pink-pale:   #fce4ec;
-  --pink-light:  #fff0f6;
-  --white:       #ffffff;
-  --gray-light:  #f9f9f9;
-  --gray-mid:    #f2f2f2;
-  --gray-text:   #555;
-  --dark-text:   #1a1a2e;
-  --gold:        #f4c542;
-  --gold-dark:   #d4a017;
-  --green:       #27ae60;
-  --shadow-sm:   0 2px 8px rgba(0,0,0,0.08);
-  --shadow-md:   0 6px 24px rgba(0,0,0,0.12);
-  --shadow-lg:   0 16px 48px rgba(0,0,0,0.16);
-  --radius-sm:   8px;
-  --radius-md:   16px;
-  --radius-lg:   24px;
-  --radius-xl:   32px;
-  --font-main:   'Nunito', sans-serif;
-  --font-title:  'Playfair Display', serif;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--font-main);
-  color: var(--dark-text);
-  background: var(--white);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* --- Typography --- */
-h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
-h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
-h2 { font-size: clamp(1.6rem, 4vw, 2.6rem); }
-h3 { font-size: clamp(1.2rem, 3vw, 1.6rem); }
-p  { font-size: 1.05rem; line-height: 1.7; }
-
-.section-title { text-align: center; margin-bottom: 1rem; }
-.section-subtitle { text-align: center; color: var(--gray-text); font-size: 1.1rem; margin-bottom: 3rem; max-width: 680px; margin-left: auto; margin-right: auto; }
-.highlight-blue  { color: var(--blue-mid); }
-.highlight-pink  { color: var(--pink-mid); }
-.highlight-gold  { color: var(--gold-dark); }
-
-/* --- Buttons --- */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-  padding: 1rem 2.2rem; border-radius: 50px; font-weight: 800;
-  font-size: 1.1rem; cursor: pointer; text-decoration: none;
-  border: none; transition: all .3s ease; letter-spacing: .03em;
-}
-.btn-primary {
-  background: linear-gradient(135deg, #e91e8c, #c2185b);
-  color: var(--white);
-  box-shadow: 0 6px 24px rgba(233,30,140,.4);
-}
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 32px rgba(233,30,140,.5);
-}
-.btn-large { padding: 1.3rem 3rem; font-size: 1.25rem; }
-.btn-full  { width: 100%; }
-
-/* --- Section Layout --- */
-.section { padding: 5rem 1.5rem; }
-.section-alt { background: var(--gray-light); }
-.container { max-width: 1080px; margin: 0 auto; }
-
-/* ========================================
-   TOP BAR
-   ======================================== */
-.top-bar {
-  background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
-  color: var(--white);
-  text-align: center;
-  padding: .65rem 1rem;
-  font-size: .92rem;
-  font-weight: 600;
-  position: sticky; top: 0; z-index: 200;
-}
-.top-bar span { color: var(--gold); font-weight: 800; }
-
-/* ========================================
-   HEADER
-   ======================================== */
-.site-header {
-  background: var(--white);
-  padding: 1rem 1.5rem;
-  position: sticky; top: 38px; z-index: 190;
-  box-shadow: var(--shadow-sm);
-  display: flex; align-items: center; justify-content: space-between;
-}
-.header-logo { font-family: var(--font-title); font-size: 1.3rem; color: var(--blue-dark); }
-.header-logo span { color: var(--pink-mid); }
-.header-cta .btn { padding: .7rem 1.6rem; font-size: .95rem; }
-
-/* ========================================
-   HERO
-   ======================================== */
-.hero {
-  background: linear-gradient(150deg, #fff0f8 0%, #f0f6ff 40%, #e8f2ff 100%);
-  padding: 4.5rem 1.5rem 5rem;
-  overflow: hidden;
-}
-.hero-inner {
-  max-width: 1080px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;
-}
-.hero-badge {
-  display: inline-block;
-  background: var(--pink-pale);
-  color: var(--pink-dark);
-  padding: .45rem 1.2rem; border-radius: 50px;
-  font-size: .88rem; font-weight: 800;
-  letter-spacing: .05em; text-transform: uppercase;
-  margin-bottom: 1.2rem;
-}
-.hero-title { font-family: var(--font-title); color: var(--blue-dark); margin-bottom: 1.2rem; }
-.hero-title .script { font-style: italic; color: var(--pink-mid); }
-.hero-sub { color: var(--gray-text); font-size: 1.15rem; margin-bottom: 2rem; }
-.hero-features { list-style: none; margin-bottom: 2rem; display: flex; flex-direction: column; gap: .55rem; }
-.hero-features li { display: flex; align-items: center; gap: .6rem; font-weight: 600; color: var(--dark-text); }
-.hero-features li::before { content: "✓"; color: var(--green); font-weight: 900; font-size: 1.1rem; }
-.hero-price-box {
-  background: var(--white);
-  border-radius: var(--radius-md);
-  padding: 1.4rem 1.8rem;
-  box-shadow: var(--shadow-md);
-  margin-bottom: 1.5rem;
-  border-left: 4px solid var(--pink-mid);
-}
-.hero-price-old { font-size: .95rem; color: var(--gray-text); text-decoration: line-through; }
-.hero-price-new { font-size: 2.5rem; font-weight: 900; color: var(--pink-dark); line-height: 1; }
-.hero-price-new sup { font-size: 1.2rem; vertical-align: top; margin-top: .4rem; }
-.hero-price-tag { font-size: .85rem; color: var(--gray-text); }
-.hero-guarantee { font-size: .88rem; color: var(--gray-text); display: flex; align-items: center; gap: .4rem; margin-top: 1rem; }
-
-.hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
-.book-mockup {
-  width: 300px; position: relative;
-  animation: float 3.5s ease-in-out infinite;
-  filter: drop-shadow(0 30px 50px rgba(37,99,168,.25));
-}
-.book-mockup img { width: 100%; border-radius: 10px; }
-.badge-floating {
-  position: absolute; background: var(--gold); color: var(--dark-text);
-  font-weight: 800; font-size: .82rem; padding: .7rem 1rem;
-  border-radius: 50%; width: 80px; height: 80px;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; line-height: 1.2; box-shadow: var(--shadow-md);
-}
-.badge-floating.top-right { top: -15px; right: -15px; }
-.badge-floating.bottom-left { bottom: 20px; left: -20px; background: var(--pink-pale); color: var(--pink-dark); font-size: .75rem; width: 70px; height: 70px; }
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-18px); }
-}
-
-/* ========================================
-   PAIN SECTION
-   ======================================== */
-.pain-section {
-  background: var(--white);
-  padding: 5rem 1.5rem;
-}
-.pain-intro {
-  text-align: center; max-width: 700px; margin: 0 auto 3rem;
-  font-size: 1.15rem; color: var(--gray-text);
-}
-.pain-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  max-width: 1080px; margin: 0 auto;
-}
-.pain-card {
-  background: linear-gradient(145deg, #fff5f8, #fff);
-  border-radius: var(--radius-md);
-  padding: 1.8rem 1.5rem;
-  border-left: 4px solid var(--pink-soft);
-  box-shadow: var(--shadow-sm);
-  transition: transform .3s;
-}
-.pain-card:hover { transform: translateY(-4px); }
-.pain-icon { font-size: 2.2rem; margin-bottom: .8rem; }
-.pain-card h3 { font-size: 1.05rem; color: var(--pink-dark); margin-bottom: .5rem; }
-.pain-card p  { font-size: .92rem; color: var(--gray-text); }
-
-/* ========================================
-   SOLUTION
-   ======================================== */
-.solution-section {
-  background: linear-gradient(135deg, var(--blue-pale), var(--pink-light));
-  padding: 5rem 1.5rem;
-}
-.solution-inner {
-  max-width: 1080px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1.6fr; gap: 4rem; align-items: center;
-}
-.solution-image img {
-  width: 100%; max-width: 300px;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  animation: float 4s ease-in-out infinite;
-}
-.solution-content .section-title { text-align: left; }
-.solution-tagline { font-size: 1.1rem; color: var(--gray-text); margin-bottom: 1.5rem; }
-.solution-specs {
-  display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem;
-}
-.spec-item {
-  background: var(--white); border-radius: var(--radius-sm);
-  padding: .6rem 1rem; font-size: .88rem; font-weight: 700;
-  color: var(--blue-dark); box-shadow: var(--shadow-sm);
-  display: flex; align-items: center; gap: .4rem;
-}
-
-/* ========================================
-   BENEFITS / CHAPTERS
-   ======================================== */
-.benefits-section { padding: 5rem 1.5rem; background: var(--white); }
-.chapters-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 1.4rem; max-width: 1080px; margin: 0 auto;
-}
-.chapter-card {
-  background: var(--white);
-  border-radius: var(--radius-md);
-  padding: 1.6rem 1.4rem;
-  border: 2px solid var(--blue-light);
-  box-shadow: var(--shadow-sm);
-  transition: all .3s;
-  display: flex; gap: 1rem; align-items: flex-start;
-}
-.chapter-card:hover { border-color: var(--blue-mid); box-shadow: var(--shadow-md); transform: translateY(-3px); }
-.chapter-icon { font-size: 2rem; flex-shrink: 0; }
-.chapter-content h4 { color: var(--blue-dark); margin-bottom: .35rem; font-size: 1rem; }
-.chapter-content p  { font-size: .88rem; color: var(--gray-text); }
-.chapter-tag {
-  display: inline-block;
-  background: var(--blue-light);
-  color: var(--blue-mid);
-  font-size: .72rem; font-weight: 700;
-  padding: .2rem .6rem; border-radius: 50px;
-  margin-bottom: .35rem;
-}
-
-/* ========================================
-   BONUS SECTION
-   ======================================== */
-.bonus-section {
-  background: linear-gradient(160deg, #1a3f6f 0%, #2563a8 60%, #1a3f6f 100%);
-  padding: 5.5rem 1.5rem;
-  position: relative;
-  overflow: hidden;
-}
-.bonus-section::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  pointer-events: none;
-}
-.bonus-header { text-align: center; margin-bottom: 3.5rem; }
-.bonus-header .section-title { color: var(--white); }
-.bonus-header .section-subtitle { color: rgba(255,255,255,.8); margin-bottom: 0; }
-
-.bonus-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  max-width: 1000px; margin: 0 auto 2.5rem;
-}
-/* 5th card centered */
-.bonus-grid .bonus-card:last-child:nth-child(odd) {
-  grid-column: 1 / -1;
-  max-width: 490px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.bonus-card {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.18);
-  border-radius: var(--radius-lg);
-  padding: 2rem 1.8rem;
-  backdrop-filter: blur(8px);
-  transition: all .3s;
-  position: relative;
-  overflow: hidden;
-}
-.bonus-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(90deg, var(--pink-mid), var(--gold));
-}
-.bonus-card:hover {
-  background: rgba(255,255,255,.12);
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0,0,0,.25);
-}
-.bonus-number {
-  display: inline-block;
-  background: linear-gradient(135deg, var(--pink-mid), var(--pink-dark));
-  color: var(--white);
-  font-size: .72rem; font-weight: 900;
-  letter-spacing: .08em; text-transform: uppercase;
-  padding: .3rem .9rem; border-radius: 50px;
-  margin-bottom: 1rem;
-}
-.bonus-icon { font-size: 2.8rem; margin-bottom: .8rem; display: block; }
-.bonus-card h3 { color: var(--white); font-size: 1.15rem; margin-bottom: .7rem; }
-.bonus-card p  { color: rgba(255,255,255,.8); font-size: .92rem; line-height: 1.6; margin-bottom: 1.2rem; }
-.bonus-value {
-  display: inline-flex; align-items: center; gap: .4rem;
-  background: rgba(244,197,66,.15);
-  border: 1px solid rgba(244,197,66,.4);
-  color: var(--gold);
-  padding: .4rem 1rem; border-radius: 50px;
-  font-size: .85rem; font-weight: 800;
-}
-
-.bonus-total-box {
-  text-align: center;
-  background: rgba(255,255,255,.1);
-  border: 2px solid rgba(255,255,255,.25);
-  border-radius: var(--radius-lg);
-  padding: 2rem 1.5rem;
-  max-width: 560px; margin: 0 auto 2.5rem;
-}
-.bonus-total-box p { color: rgba(255,255,255,.8); margin-bottom: .5rem; font-size: 1rem; }
-.bonus-total-value { font-size: 2.2rem; font-weight: 900; color: var(--gold); }
-.bonus-total-caption {
-  color: rgba(255,255,255,.9);
-  font-size: 1.05rem;
-  margin-top: 1rem;
-  font-weight: 600;
-}
-
-/* ========================================
-   TRANSFORMATION / BEFORE-AFTER
-   ======================================== */
-.transform-section { padding: 5rem 1.5rem; background: var(--gray-light); }
-.transform-grid {
-  display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem;
-  align-items: center; max-width: 900px; margin: 0 auto;
-}
-.transform-col {
-  background: var(--white); border-radius: var(--radius-md);
-  padding: 2rem 1.5rem; box-shadow: var(--shadow-sm);
-}
-.transform-col.before { border-top: 5px solid #e57373; }
-.transform-col.after  { border-top: 5px solid var(--green); }
-.transform-label {
-  font-size: .82rem; font-weight: 900; letter-spacing: .1em;
-  text-transform: uppercase; margin-bottom: 1.2rem;
-}
-.transform-col.before .transform-label { color: #e57373; }
-.transform-col.after  .transform-label { color: var(--green); }
-.transform-list { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
-.transform-list li { display: flex; align-items: flex-start; gap: .5rem; font-size: .95rem; }
-.transform-col.before .transform-list li::before { content: "✗"; color: #e57373; font-weight: 900; }
-.transform-col.after  .transform-list li::before { content: "✓"; color: var(--green); font-weight: 900; }
-.transform-arrow { font-size: 2.5rem; color: var(--blue-mid); font-weight: 900; }
-
-/* ========================================
-   TESTIMONIALS
-   ======================================== */
-.testimonials-section { padding: 5rem 1.5rem; background: var(--white); }
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem; max-width: 1080px; margin: 0 auto;
-}
-.testimonial-card {
-  background: var(--white);
-  border-radius: var(--radius-md);
-  padding: 1.8rem 1.5rem;
-  box-shadow: var(--shadow-md);
-  border: 1px solid #f0f0f0;
-  transition: transform .3s;
-  position: relative;
-}
-.testimonial-card:hover { transform: translateY(-4px); }
-.testimonial-card::before {
-  content: '"'; font-family: var(--font-title);
-  font-size: 5rem; color: var(--pink-pale);
-  position: absolute; top: .5rem; left: 1rem; line-height: 1;
-  pointer-events: none;
-}
-.stars { color: var(--gold); font-size: 1.1rem; margin-bottom: .8rem; }
-.testimonial-text { color: var(--gray-text); font-style: italic; margin-bottom: 1.2rem; font-size: .95rem; }
-.testimonial-author { display: flex; align-items: center; gap: .8rem; }
-.author-avatar {
-  width: 48px; height: 48px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--pink-pale), var(--blue-light));
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.4rem;
-}
-.author-name { font-weight: 700; color: var(--blue-dark); font-size: .95rem; }
-.author-info { font-size: .82rem; color: var(--gray-text); }
-
-/* ========================================
-   GUARANTEE
-   ======================================== */
-.guarantee-section {
-  background: linear-gradient(135deg, var(--green) 0%, #1e8449 100%);
-  padding: 5rem 1.5rem; text-align: center;
-}
-.guarantee-inner { max-width: 720px; margin: 0 auto; }
-.guarantee-badge {
-  width: 140px; height: 140px; margin: 0 auto 2rem;
-  border-radius: 50%;
-  background: rgba(255,255,255,.15);
-  border: 4px solid rgba(255,255,255,.5);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  font-size: .88rem; font-weight: 800; color: var(--white); text-align: center;
-}
-.guarantee-badge .days { font-size: 3.2rem; font-weight: 900; line-height: 1; }
-.guarantee-title { color: var(--white); font-size: 2rem; margin-bottom: 1rem; }
-.guarantee-text  { color: rgba(255,255,255,.9); font-size: 1.05rem; }
-
-/* ========================================
-   PRICE / OFFER
-   ======================================== */
-.offer-section {
-  padding: 5.5rem 1.5rem;
-  background: linear-gradient(160deg, #fff0f8, #f0f6ff);
-}
-.offer-box {
-  max-width: 680px; margin: 0 auto;
-  background: var(--white);
-  border-radius: var(--radius-xl);
-  padding: 3rem 2.5rem;
-  box-shadow: 0 20px 60px rgba(37,99,168,.18);
-  text-align: center;
-  border: 3px solid var(--pink-soft);
-}
-.offer-top-badge {
-  display: inline-block;
-  background: var(--pink-mid); color: var(--white);
-  padding: .4rem 1.4rem; border-radius: 50px;
-  font-size: .85rem; font-weight: 800;
-  letter-spacing: .05em; margin-bottom: 1.5rem;
-}
-.offer-title { color: var(--blue-dark); font-family: var(--font-title); margin-bottom: .5rem; }
-.offer-book-img {
-  width: 160px; margin: 1.5rem auto;
-  filter: drop-shadow(0 15px 30px rgba(37,99,168,.2));
-  border-radius: 8px;
-}
-.offer-bonuses-summary { font-size: .92rem; color: var(--gray-text); margin-bottom: 1.5rem; }
-.offer-divider { height: 1px; background: var(--gray-mid); margin: 1.5rem 0; }
-.offer-price-old { color: var(--gray-text); font-size: 1rem; text-decoration: line-through; margin-bottom: .3rem; }
-.offer-price-new { font-size: 3rem; font-weight: 900; color: var(--pink-dark); line-height: 1; }
-.offer-price-new sup { font-size: 1.4rem; vertical-align: top; margin-top: .5rem; }
-.offer-price-sub { color: var(--gray-text); font-size: .88rem; margin-bottom: 1.5rem; }
-.offer-savings {
-  display: inline-block;
-  background: #e8f8f0; color: var(--green);
-  padding: .4rem 1.2rem; border-radius: 50px;
-  font-weight: 800; font-size: .9rem; margin-bottom: 2rem;
-}
-.offer-cta-btn {
-  font-size: 1.3rem; padding: 1.4rem 3rem;
-  width: 100%; justify-content: center;
-  animation: pulse-btn 2.5s ease-in-out infinite;
-}
-@keyframes pulse-btn {
-  0%, 100% { box-shadow: 0 6px 24px rgba(233,30,140,.4); }
-  50%       { box-shadow: 0 12px 40px rgba(233,30,140,.7); }
-}
-.offer-payment-icons { margin-top: 1rem; font-size: .85rem; color: var(--gray-text); }
-.offer-secure { margin-top: .7rem; font-size: .82rem; color: var(--gray-text); display: flex; align-items: center; justify-content: center; gap: .4rem; }
-
-/* ========================================
-   FAQ
-   ======================================== */
-.faq-section { padding: 5rem 1.5rem; background: var(--white); }
-.faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: .8rem; }
-.faq-item {
-  border: 1px solid #e8e8e8;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  transition: box-shadow .3s;
-}
-.faq-item:hover { box-shadow: var(--shadow-sm); }
-.faq-question {
-  width: 100%; background: none; border: none; cursor: pointer;
-  padding: 1.3rem 1.5rem;
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  font-family: var(--font-main); font-size: 1rem; font-weight: 700;
-  color: var(--blue-dark); text-align: left;
-  transition: background .2s;
-}
-.faq-question:hover { background: var(--blue-pale); }
-.faq-question.active { background: var(--blue-pale); color: var(--blue-mid); }
-.faq-chevron {
-  font-size: 1.2rem; transition: transform .3s;
-  flex-shrink: 0; color: var(--blue-mid);
-}
-.faq-question.active .faq-chevron { transform: rotate(180deg); }
-.faq-answer {
-  max-height: 0; overflow: hidden;
-  transition: max-height .4s ease, padding .3s;
-  background: var(--white);
-}
-.faq-answer.open { max-height: 300px; padding: 1.2rem 1.5rem; }
-.faq-answer p { color: var(--gray-text); font-size: .95rem; }
-
-/* ========================================
-   FINAL CTA
-   ======================================== */
-.final-cta {
-  background: linear-gradient(135deg, var(--pink-dark), #8e0e4f);
-  padding: 5.5rem 1.5rem; text-align: center;
-  position: relative; overflow: hidden;
-}
-.final-cta::before {
-  content: '💙'; font-size: 18rem;
-  position: absolute; bottom: -6rem; right: -3rem;
-  opacity: .04; pointer-events: none;
-}
-.final-cta-inner { max-width: 700px; margin: 0 auto; }
-.final-cta h2 { color: var(--white); font-family: var(--font-title); margin-bottom: 1rem; }
-.final-cta p  { color: rgba(255,255,255,.85); font-size: 1.1rem; margin-bottom: 2.5rem; }
-.final-cta .btn-primary {
-  background: var(--white); color: var(--pink-dark);
-  font-size: 1.25rem; padding: 1.3rem 3rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,.2);
-}
-.final-cta .btn-primary:hover {
-  background: #fff5fa;
-  box-shadow: 0 14px 48px rgba(0,0,0,.3);
-}
-
-/* ========================================
-   FOOTER
-   ======================================== */
-.site-footer {
-  background: var(--dark-text);
-  color: rgba(255,255,255,.6);
-  text-align: center;
-  padding: 2rem 1.5rem;
-  font-size: .85rem;
-}
-.site-footer a { color: rgba(255,255,255,.7); text-decoration: none; }
-.site-footer a:hover { color: var(--white); }
-.footer-brand { color: var(--white); font-weight: 700; font-size: 1rem; margin-bottom: .5rem; }
-
-/* ========================================
-   FLOATING CTA
-   ======================================== */
-.floating-cta {
-  position: fixed; bottom: 1.5rem; left: 50%;
-  transform: translateX(-50%) translateY(120px);
-  z-index: 999;
-  background: linear-gradient(135deg, #e91e8c, #c2185b);
-  color: var(--white); border: none; border-radius: 50px;
-  padding: 1rem 2.5rem; font-size: 1.05rem; font-weight: 800;
-  cursor: pointer; box-shadow: 0 8px 28px rgba(233,30,140,.55);
-  white-space: nowrap;
-  transition: transform .4s cubic-bezier(.34,1.56,.64,1), opacity .4s;
-  text-decoration: none; display: inline-flex; align-items: center; gap: .5rem;
-  opacity: 0;
-}
-.floating-cta.visible {
-  transform: translateX(-50%) translateY(0);
-  opacity: 1;
-}
-.floating-cta:hover { filter: brightness(1.1); }
-
-/* ========================================
-   ANIMATE ON SCROLL
-   ======================================== */
-.aos-init {
-  opacity: 0; transform: translateY(30px);
-  transition: opacity .6s ease, transform .6s ease;
-}
-.aos-init.aos-visible { opacity: 1; transform: translateY(0); }
-
-/* ========================================
-   RESPONSIVE
-   ======================================== */
-@media (max-width: 900px) {
-  .hero-inner       { grid-template-columns: 1fr; text-align: center; }
-  .hero-features    { align-items: center; }
-  .hero-visual      { order: -1; }
-  .book-mockup      { width: 220px; }
-  .solution-inner   { grid-template-columns: 1fr; text-align: center; }
-  .solution-image   { display: flex; justify-content: center; }
-  .solution-content .section-title { text-align: center; }
-  .transform-grid   { grid-template-columns: 1fr; }
-  .transform-arrow  { display: none; }
-  .hero-price-box   { max-width: 360px; margin-left: auto; margin-right: auto; }
-}
-
-@media (max-width: 640px) {
-  .site-header .header-logo-text { display: none; }
-  .section { padding: 3.5rem 1rem; }
-  .bonus-grid { grid-template-columns: 1fr; }
-  .bonus-grid .bonus-card:last-child:nth-child(odd) {
-    grid-column: unset;
-    max-width: 100%;
-  }
-  .offer-box { padding: 2rem 1.3rem; }
-  .chapters-grid { grid-template-columns: 1fr; }
-  .transform-grid { gap: 1rem; }
-  .testimonials-grid { grid-template-columns: 1fr; }
-}
-
-  </style>
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
@@ -727,46 +99,46 @@ p  { font-size: 1.05rem; line-height: 1.7; }
      ============================================ -->
 <section class="pain-section" id="dores" aria-label="Identificação com as dificuldades">
   <div class="container">
-    <h2 class="section-title aos-init">
+    <h2 class="section-title">
       Você já passou por alguma situação dessas? 😔
     </h2>
-    <p class="section-subtitle aos-init">
+    <p class="section-subtitle">
       Se você respondeu "sim" para qualquer uma dessas situações, você não está sozinha — e este guia foi feito exatamente para você.
     </p>
 
     <div class="pain-grid">
 
-      <div class="pain-card aos-init">
+      <div class="pain-card">
         <div class="pain-icon">😰</div>
         <h3>Medo do dentista paralisante</h3>
         <p>Sua filha chora, grita e se recusa a abrir a boca na consulta. Cada visita vira um pesadelo para toda a família.</p>
       </div>
 
-      <div class="pain-card aos-init">
+      <div class="pain-card">
         <div class="pain-icon">🦷</div>
         <h3>Cárie apareceu do nada</h3>
         <p>Você escova os dentes do seu filho todos os dias, mas ainda assim a cárie apareceu. Por quê? Onde está o erro?</p>
       </div>
 
-      <div class="pain-card aos-init">
+      <div class="pain-card">
         <div class="pain-icon">😤</div>
         <h3>Briga diária na escovação</h3>
         <p>Toda noite é uma batalha. Choro, recusa, fuga do banheiro. Você já não sabe mais o que fazer para resolver isso.</p>
       </div>
 
-      <div class="pain-card aos-init">
+      <div class="pain-card">
         <div class="pain-icon">❓</div>
         <h3>Dúvidas sem resposta confiável</h3>
         <p>Pasta com flúor ou sem? Escova elétrica ou manual? Quando ir ao dentista pela primeira vez? Cada pesquisa diz uma coisa diferente.</p>
       </div>
 
-      <div class="pain-card aos-init">
+      <div class="pain-card">
         <div class="pain-icon">😟</div>
         <h3>Culpa por não saber o suficiente</h3>
         <p>Você sente que deveria saber mais, mas ninguém te ensinou direito. E cada dentista parece falar um idioma diferente.</p>
       </div>
 
-      <div class="pain-card aos-init">
+      <div class="pain-card">
         <div class="pain-icon">💸</div>
         <h3>Gastos altos com odontologia</h3>
         <p>Consultas de urgência, tratamentos caros, obturações... Tudo isso poderia ser evitado com informação certa e preventiva.</p>
@@ -782,19 +154,19 @@ p  { font-size: 1.05rem; line-height: 1.7; }
 <section class="solution-section" id="solucao" aria-label="Apresentação da solução">
   <div class="solution-inner">
 
-    <div class="solution-image aos-init">
+    <div class="solution-image">
       <img src="images/capa-ebook.jpg" alt="eBook Amor que Protege" />
     </div>
 
     <div class="solution-content">
-      <h2 class="section-title aos-init">
+      <h2 class="section-title">
         A solução que toda mãe precisava ter <span class="highlight-pink">desde o primeiro dentinho</span>
       </h2>
-      <p class="solution-tagline aos-init">
+      <p class="solution-tagline">
         O <strong>Amor que Protege</strong> é um guia completo, prático e acolhedor escrito especialmente para mães. Sem termos técnicos complicados, sem julgamentos — só amor e conhecimento de verdade.
       </p>
 
-      <div class="solution-specs aos-init">
+      <div class="solution-specs">
         <span class="spec-item">📖 68 Páginas</span>
         <span class="spec-item">📚 10 Capítulos</span>
         <span class="spec-item">🎁 5 Bônus</span>
@@ -802,7 +174,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         <span class="spec-item">♾️ Acesso Vitalício</span>
       </div>
 
-      <a href="#oferta" class="btn btn-primary aos-init">
+      <a href="#oferta" class="btn btn-primary">
         🛒 Quero o Guia por R$ 29,90
       </a>
     </div>
@@ -815,16 +187,16 @@ p  { font-size: 1.05rem; line-height: 1.7; }
      ============================================ -->
 <section class="benefits-section" id="conteudo" aria-label="Conteúdo do eBook">
   <div class="container">
-    <h2 class="section-title aos-init">
+    <h2 class="section-title">
       O que você vai aprender em cada capítulo 📚
     </h2>
-    <p class="section-subtitle aos-init">
+    <p class="section-subtitle">
       10 capítulos desenvolvidos com base em odontopediatria moderna, em linguagem que toda mãe entende e consegue aplicar hoje mesmo.
     </p>
 
     <div class="chapters-grid">
 
-      <div class="chapter-card aos-init">
+      <div class="chapter-card">
         <div class="chapter-icon">👶</div>
         <div class="chapter-content">
           <span class="chapter-tag">0 – 6 meses</span>
@@ -833,7 +205,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="chapter-card aos-init">
+      <div class="chapter-card">
         <div class="chapter-icon">🌱</div>
         <div class="chapter-content">
           <span class="chapter-tag">6 – 12 meses</span>
@@ -842,7 +214,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="chapter-card aos-init">
+      <div class="chapter-card">
         <div class="chapter-icon">🙋</div>
         <div class="chapter-content">
           <span class="chapter-tag">1 – 3 anos</span>
@@ -851,7 +223,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="chapter-card aos-init">
+      <div class="chapter-card">
         <div class="chapter-icon">🌟</div>
         <div class="chapter-content">
           <span class="chapter-tag">3 – 6 anos</span>
@@ -860,7 +232,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="chapter-card aos-init">
+      <div class="chapter-card">
         <div class="chapter-icon">🎒</div>
         <div class="chapter-content">
           <span class="chapter-tag">6 – 12 anos</span>
@@ -869,7 +241,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="chapter-card aos-init">
+      <div class="chapter-card">
         <div class="chapter-icon">🦠</div>
         <div class="chapter-content">
           <span class="chapter-tag">Prevenção</span>
@@ -878,7 +250,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="chapter-card aos-init">
+      <div class="chapter-card">
         <div class="chapter-icon">🪥</div>
         <div class="chapter-content">
           <span class="chapter-tag">Prática</span>
@@ -887,7 +259,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="chapter-card aos-init">
+      <div class="chapter-card">
         <div class="chapter-icon">🥦</div>
         <div class="chapter-content">
           <span class="chapter-tag">Nutrição</span>
@@ -896,7 +268,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="chapter-card aos-init">
+      <div class="chapter-card">
         <div class="chapter-icon">😄</div>
         <div class="chapter-content">
           <span class="chapter-tag">Consultório</span>
@@ -905,7 +277,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="chapter-card aos-init">
+      <div class="chapter-card">
         <div class="chapter-icon">💎</div>
         <div class="chapter-content">
           <span class="chapter-tag">Hábitos</span>
@@ -934,7 +306,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
     <div class="bonus-grid">
 
       <!-- BÔNUS 1 -->
-      <div class="bonus-card aos-init">
+      <div class="bonus-card">
         <span class="bonus-number">Bônus #1</span>
         <span class="bonus-icon">📅</span>
         <h3>Planner Mensal Imprimível</h3>
@@ -943,7 +315,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
       </div>
 
       <!-- BÔNUS 2 -->
-      <div class="bonus-card aos-init">
+      <div class="bonus-card">
         <span class="bonus-number">Bônus #2</span>
         <span class="bonus-icon">🍎</span>
         <h3>Receitas que Protegem os Dentes</h3>
@@ -952,7 +324,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
       </div>
 
       <!-- BÔNUS 3 -->
-      <div class="bonus-card aos-init">
+      <div class="bonus-card">
         <span class="bonus-number">Bônus #3</span>
         <span class="bonus-icon">📖</span>
         <h3>Histórias Mágicas + Cartaz de Rotina</h3>
@@ -961,7 +333,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
       </div>
 
       <!-- BÔNUS 4 -->
-      <div class="bonus-card aos-init">
+      <div class="bonus-card">
         <span class="bonus-number">Bônus #4</span>
         <span class="bonus-icon">🦷</span>
         <h3>Passaporte do Sorriso + Guia do Dentista</h3>
@@ -969,8 +341,8 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         <div class="bonus-value">🎁 Valor: R$ 67,00</div>
       </div>
 
-      <!-- BÔNUS 5 (centralizado) -->
-      <div class="bonus-card aos-init">
+      <!-- BÔNUS 5 -->
+      <div class="bonus-card">
         <span class="bonus-number">Bônus #5</span>
         <span class="bonus-icon">💝</span>
         <h3>O Sorriso da Mãe Também Importa</h3>
@@ -981,14 +353,14 @@ p  { font-size: 1.05rem; line-height: 1.7; }
     </div><!-- /bonus-grid -->
 
     <!-- TOTAL DOS BÔNUS -->
-    <div class="bonus-total-box aos-init">
+    <div class="bonus-total-box">
       <p>💎 Valor total dos bônus:</p>
       <div class="bonus-total-value">R$ 285,00 em bônus</div>
       <p class="bonus-total-caption">Você recebe TUDO isso junto com o guia principal — sem custo adicional!</p>
     </div>
 
     <div style="text-align:center;">
-      <a href="#oferta" class="btn btn-primary btn-large aos-init">
+      <a href="#oferta" class="btn btn-primary btn-large">
         🛒 Quero o Guia + 5 Bônus por R$ 29,90
       </a>
     </div>
@@ -1001,16 +373,16 @@ p  { font-size: 1.05rem; line-height: 1.7; }
      ============================================ -->
 <section class="transform-section" id="transformacao" aria-label="Transformação antes e depois">
   <div class="container">
-    <h2 class="section-title aos-init">
+    <h2 class="section-title">
       A transformação que você vai viver 💙
     </h2>
-    <p class="section-subtitle aos-init">
+    <p class="section-subtitle">
       Veja a diferença concreta que este guia vai fazer na sua vida e na do seu filho
     </p>
 
     <div class="transform-grid">
 
-      <div class="transform-col before aos-init">
+      <div class="transform-col before">
         <div class="transform-label">😰 Antes do Guia</div>
         <ul class="transform-list">
           <li>Briga toda noite na escovação</li>
@@ -1025,7 +397,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
 
       <div class="transform-arrow">→</div>
 
-      <div class="transform-col after aos-init">
+      <div class="transform-col after">
         <div class="transform-label">✨ Depois do Guia</div>
         <ul class="transform-list">
           <li>Rotina de escovação fácil e divertida</li>
@@ -1047,16 +419,16 @@ p  { font-size: 1.05rem; line-height: 1.7; }
      ============================================ -->
 <section class="testimonials-section" id="depoimentos" aria-label="Depoimentos de mães">
   <div class="container">
-    <h2 class="section-title aos-init">
+    <h2 class="section-title">
       O que as mães estão dizendo 💬
     </h2>
-    <p class="section-subtitle aos-init">
+    <p class="section-subtitle">
       Mais de 3.000 mães já transformaram a saúde bucal dos seus filhos com este guia
     </p>
 
     <div class="testimonials-grid">
 
-      <article class="testimonial-card aos-init">
+      <article class="testimonial-card">
         <div class="stars">★★★★★</div>
         <p class="testimonial-text">"Minha filha de 4 anos que chorava todo dia na hora de escovar os dentes. Depois de uma semana aplicando as dicas do guia, ela mesma chama para escovar! Não acredito na transformação."</p>
         <div class="testimonial-author">
@@ -1068,9 +440,9 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </article>
 
-      <article class="testimonial-card aos-init">
+      <article class="testimonial-card">
         <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Levei meu filho ao dentista e ele ficou tranquilo pela primeira vez na vida! A dentista ficou surpresa. Elas técnicas do capítulo 9 funcionam de verdade."</p>
+        <p class="testimonial-text">"Levei meu filho ao dentista e ele ficou tranquilo pela primeira vez na vida! A dentista ficou surpresa. As técnicas do capítulo 9 funcionam de verdade."</p>
         <div class="testimonial-author">
           <div class="author-avatar">👩‍🦱</div>
           <div>
@@ -1080,7 +452,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </article>
 
-      <article class="testimonial-card aos-init">
+      <article class="testimonial-card">
         <div class="stars">★★★★★</div>
         <p class="testimonial-text">"Já gastei muito dinheiro com cáries do meu filho. Depois do guia, nenhuma cárie nova em 8 meses de consulta de rotina. A dentista disse que os dentes estão ótimos!"</p>
         <div class="testimonial-author">
@@ -1092,7 +464,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </article>
 
-      <article class="testimonial-card aos-init">
+      <article class="testimonial-card">
         <div class="stars">★★★★★</div>
         <p class="testimonial-text">"O planner de bônus mudou minha vida. Tenho 3 filhos e finalmente tenho uma rotina organizada para os três. Simples, prático e faz toda diferença na consistência."</p>
         <div class="testimonial-author">
@@ -1104,7 +476,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </article>
 
-      <article class="testimonial-card aos-init">
+      <article class="testimonial-card">
         <div class="stars">★★★★★</div>
         <p class="testimonial-text">"Eu achei que sabia tudo sobre saúde bucal infantil. Me enganei! O guia trouxe informações que nunca vi em nenhum outro lugar. As histórias infantis do bônus são uma gracinha."</p>
         <div class="testimonial-author">
@@ -1116,7 +488,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </article>
 
-      <article class="testimonial-card aos-init">
+      <article class="testimonial-card">
         <div class="stars">★★★★★</div>
         <p class="testimonial-text">"Vale cada centavo e muito mais. Me sinto uma mãe muito mais preparada e confiante. Minha filha ama o cartaz do banheiro e fica orgulhosa de colar os adesivos do planner."</p>
         <div class="testimonial-author">
@@ -1137,14 +509,14 @@ p  { font-size: 1.05rem; line-height: 1.7; }
      ============================================ -->
 <section class="guarantee-section" id="garantia" aria-label="Garantia de 7 dias">
   <div class="guarantee-inner">
-    <div class="guarantee-badge aos-init">
+    <div class="guarantee-badge">
       <div class="days">7</div>
       <div>dias de<br>garantia</div>
     </div>
 
-    <h2 class="guarantee-title aos-init">Risco Zero: Garantia Incondicional de 7 Dias</h2>
+    <h2 class="guarantee-title">Risco Zero: Garantia Incondicional de 7 Dias</h2>
 
-    <p class="guarantee-text aos-init">
+    <p class="guarantee-text">
       Se por qualquer motivo você não ficar satisfeita — seja lá qual for — basta nos enviar um e-mail em até 7 dias após a compra e devolvemos 100% do valor sem perguntas, sem burocracia. A confiança é total. O risco é nosso, não seu. 💚
     </p>
   </div>
@@ -1193,12 +565,12 @@ p  { font-size: 1.05rem; line-height: 1.7; }
      ============================================ -->
 <section class="faq-section" id="faq" aria-label="Perguntas frequentes">
   <div class="container">
-    <h2 class="section-title aos-init">Perguntas Frequentes ❓</h2>
-    <p class="section-subtitle aos-init">Tire suas dúvidas antes de decidir</p>
+    <h2 class="section-title">Perguntas Frequentes ❓</h2>
+    <p class="section-subtitle">Tire suas dúvidas antes de decidir</p>
 
     <div class="faq-list">
 
-      <div class="faq-item aos-init">
+      <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
           Como vou receber o eBook após a compra?
           <span class="faq-chevron">▾</span>
@@ -1208,7 +580,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="faq-item aos-init">
+      <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
           Funciona para crianças de qualquer idade?
           <span class="faq-chevron">▾</span>
@@ -1218,7 +590,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="faq-item aos-init">
+      <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
           Preciso ter experiência ou conhecimento prévio?
           <span class="faq-chevron">▾</span>
@@ -1228,7 +600,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="faq-item aos-init">
+      <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
           O eBook substitui a consulta ao dentista?
           <span class="faq-chevron">▾</span>
@@ -1238,7 +610,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="faq-item aos-init">
+      <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
           Como funciona a garantia de 7 dias?
           <span class="faq-chevron">▾</span>
@@ -1248,7 +620,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="faq-item aos-init">
+      <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
           Posso imprimir o eBook e os bônus?
           <span class="faq-chevron">▾</span>
@@ -1258,7 +630,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="faq-item aos-init">
+      <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
           Qual é o valor total que estou recebendo?
           <span class="faq-chevron">▾</span>
@@ -1268,7 +640,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="faq-item aos-init">
+      <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
           A plataforma de pagamento é segura?
           <span class="faq-chevron">▾</span>
@@ -1278,7 +650,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="faq-item aos-init">
+      <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
           Tenho um filho bebê e outro de 8 anos. Vale para os dois?
           <span class="faq-chevron">▾</span>
@@ -1288,7 +660,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
         </div>
       </div>
 
-      <div class="faq-item aos-init">
+      <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
           Por quanto tempo terei acesso?
           <span class="faq-chevron">▾</span>
@@ -1311,7 +683,7 @@ p  { font-size: 1.05rem; line-height: 1.7; }
     <p>
       Cada dia sem informação correta pode ser um dia a mais de briga na hora de escovar, uma cárie a mais surgindo em silêncio, um medo a mais crescendo antes da consulta. Por apenas R$ 29,90, você muda isso agora.
     </p>
-    <a href="#oferta" class="btn btn-primary aos-init">
+    <a href="#oferta" class="btn btn-primary">
       🛒 Quero Proteger o Sorriso do Meu Filho Agora
     </a>
     <p style="color:rgba(255,255,255,.7); font-size:.88rem; margin-top:1rem;">
@@ -1342,69 +714,6 @@ p  { font-size: 1.05rem; line-height: 1.7; }
 </a>
 
 <!-- Scripts -->
-<script>
-/* ========================================
-   AMOR QUE PROTEGE - Main JS
-   ======================================== */
-
-document.addEventListener('DOMContentLoaded', () => {
-
-  /* --- FAQ Accordion --- */
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const answer  = btn.nextElementSibling;
-      const isOpen  = btn.classList.contains('active');
-
-      // close all
-      document.querySelectorAll('.faq-question').forEach(q => {
-        q.classList.remove('active');
-        q.nextElementSibling.classList.remove('open');
-      });
-
-      // open clicked if it was closed
-      if (!isOpen) {
-        btn.classList.add('active');
-        answer.classList.add('open');
-      }
-    });
-  });
-
-  /* --- Floating CTA --- */
-  const floatingCta = document.getElementById('floating-cta');
-  if (floatingCta) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 500) {
-        floatingCta.classList.add('visible');
-      } else {
-        floatingCta.classList.remove('visible');
-      }
-    });
-  }
-
-  /* --- AOS (Animate On Scroll) --- */
-  const aosObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('aos-visible');
-      }
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.aos-init').forEach(el => aosObserver.observe(el));
-
-  /* --- Smooth scroll for anchor links --- */
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
-});
-
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
